@@ -26,6 +26,8 @@ body{
 #fundolista{
     background-color: var(--corprincipal);
     width: 560px;
+    height: 500px;
+    border-radius:10px;
 }
 
 #cima{
