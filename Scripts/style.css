@@ -23,24 +23,56 @@ body{
     font-family: 'Space Grotesk';
 }
 
-#fundolista{
+#fundolista {
+    border-radius: 25px;
     background-color: var(--corprincipal);
     width: 560px;
     height: 500px;
     border-radius:10px;
 }
 
-#cima{
+/*parte de cima do to-do list*/
+#cima {
     display: flex;
     flex-direction: row;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
-#baixo{
+/*caixa da lista*/
+#listaprincipal{
+    display: flex;
+    justify-content: center;
+}
+
+#tasklist {
+    background-color: var(--corsecundaria);
+    margin-bottom: 25px;
+    width: 523px;
+    justify-content: center;
+}
+
+/*parte de baixo do to-do list*/
+#baixo {
+    margin-bottom: 20px;
+    /*flex*/
     display: flex;
     flex-direction: row;
 
 }
 
-li {
-    list-style: none;
+#input {
+    width: 426px;
+    height: 76px;
+    background-color: var(--corsecundaria);
+}
+
+#botaoadd {
+    margin-left: 25px;
+    /*flex*/
+    width: 74px;
+    height: 76px;
+    background-color: var(--corimpacto);
 }
