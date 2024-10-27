@@ -10,3 +10,16 @@ function toggleDarkMode() {
         darkModeToggle.textContent = "🌙";
     }
 }
+
+function addNewLine(){
+    var inputValue = document.getElementById("inputText").value;
+    var taskList = document.getElementById("taskList");
+    var checkbox = document.createElement("button");
+    
+    
+    
+    taskList = document.createElement("li");
+    taskList.appendChild(checkbox);
+    taskList.appendChild(document.createTextNode(inputValue));
+    
+}
