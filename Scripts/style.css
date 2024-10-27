@@ -41,10 +41,20 @@ body {
 #cima {
     display: flex;
     flex-direction: row;
+    margin-bottom: 5px;
+}
+
+/*caixa da lista*/
+#listaprincipal{
+    display: flex;
+    justify-content: center;
 }
 
 #tasklist {
     background-color: var(--corsecundaria);
+    margin-bottom: 5px;
+    width: 523px;
+    justify-content: center;
 }
 
 /*parte de baixo do to-do list*/
