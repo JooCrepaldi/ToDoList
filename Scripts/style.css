@@ -1,3 +1,13 @@
-.body{
-    background-color: gray;
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+:root{
+    --corfundo:rgba(160, 163, 158, 1);
+    --corprincipal:rgba(217, 217, 217, 1);
+    --corsecundaria:rgba(205, 205, 205, 1);
+    --corimpacto:rgba(105, 152, 229, 1);
 }
