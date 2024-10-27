@@ -76,3 +76,8 @@ body{
     height: 76px;
     background-color: var(--corimpacto);
 }
+
+li{
+    list-style: none;
+    margin: 4px;
+}
