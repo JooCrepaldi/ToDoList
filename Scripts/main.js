@@ -15,7 +15,7 @@ function addNewLine(){
     alert("cacholo flito");
     var inputValue = document.getElementById("input").value;
     // Variável inputValue captura o texto do input quando o botão "+" é pressionado
-    var taskList = document.getElementById("tasklist");
+    var taskList = document.getElementById("taskList");
     var checkbox = document.createElement("button");
     
     if(inputValue.trim() != ''){
@@ -23,7 +23,7 @@ function addNewLine(){
         taskList.appendChild(checkbox);
         taskList.appendChild(document.createTextNode(inputValue));
         
-        (document.getElementById("tasklist")).appendChild(taskList);
+        (document.getElementById("taskList")).appendChild(taskList);
     }
     document.getElementById("input").value = '';
 }
