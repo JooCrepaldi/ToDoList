@@ -12,7 +12,9 @@ function toggleDarkMode() {
 }
 
 function addNewLine(){
-    var inputValue = document.getElementById("inputText").value;
+    alert("log 1");
+    var inputValue = document.getElementById("input").value;
+    // Variável inputValue captura o texto do input quando o botão "+" é pressionado
     var taskList = document.getElementById("taskList");
     var checkbox = document.createElement("button");
     
@@ -21,5 +23,5 @@ function addNewLine(){
     taskList = document.createElement("li");
     taskList.appendChild(checkbox);
     taskList.appendChild(document.createTextNode(inputValue));
-    
+    (document.getElementById("taskList")).appendChild(taskList);
 }
