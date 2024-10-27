@@ -12,7 +12,8 @@ function toggleDarkMode() {
 }
 
 function addNewLine(){
-    var inputValue = document.getElementById("inputText").value;
+    alert("log 1");
+    var inputValue = document.getElementById("input").value;
     var taskList = document.getElementById("taskList");
     var checkbox = document.createElement("button");
     
