@@ -12,7 +12,6 @@ function toggleDarkMode() {
 }
 
 function addNewLine(){
-    alert("log 1");
     var inputValue = document.getElementById("input").value;
     // Variável inputValue captura o texto do input quando o botão "+" é pressionado
     var taskList = document.getElementById("taskList");
