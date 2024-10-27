@@ -4,39 +4,31 @@
     padding: 0;
     border: none;
     outline: none;
-    list-style-type: none;
 }
 
-/*variáveis css*/
-:root {
-    --corfundo: rgba(160, 163, 158, 1);
-    --corprincipal: rgba(217, 217, 217, 1);
-    --corsecundaria: rgba(205, 205, 205, 1);
-    --corimpacto: rgba(105, 152, 229, 1);
+:root{
+    --corfundo:rgba(160, 163, 158, 1);
+    --corprincipal:rgba(217, 217, 217, 1);
+    --corsecundaria:rgba(205, 205, 205, 1);
+    --corimpacto:rgba(105, 152, 229, 1);
 }
 
-.darkmode {
-    --corfundo: rgba(30, 30, 30, 1);
-    --corprincipal: rgba(50, 50, 50, 1);
-    --corsecundaria: rgba(90, 90, 90, 1);
-    --corimpacto: rgba(125, 185, 250, 1);
-
-}
-
-body {
+body{
     background-color: var(--corfundo);
-    font-family: 'Space Grotesk';
     /*flex*/
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    font-family: 'Space Grotesk';
 }
 
 #fundolista {
     border-radius: 25px;
     background-color: var(--corprincipal);
     width: 560px;
+    height: 500px;
+    border-radius:10px;
 }
 
 /*parte de cima do to-do list*/
@@ -68,7 +60,7 @@ body {
     /*flex*/
     display: flex;
     flex-direction: row;
-    justify-content: center;
+
 }
 
 #input {
