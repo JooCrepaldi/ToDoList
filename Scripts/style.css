@@ -80,4 +80,5 @@ body{
 li{
     list-style: none;
     margin: 4px;
+    text-align: center;
 }
