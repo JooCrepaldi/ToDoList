@@ -6,14 +6,21 @@
     outline: none;
 }
 
-:root{
-    --corfundo:rgba(160, 163, 158, 1);
-    --corprincipal:rgba(217, 217, 217, 1);
-    --corsecundaria:rgba(205, 205, 205, 1);
-    --corimpacto:rgba(105, 152, 229, 1);
+:root {
+    --corfundo: rgba(160, 163, 158, 1);
+    --corprincipal: rgba(217, 217, 217, 1);
+    --corsecundaria: rgba(205, 205, 205, 1);
+    --corimpacto: rgba(105, 152, 229, 1);
 }
 
-body{
+.darkmode {
+    --corfundo: rgba(30, 30, 30, 1);
+    --corsecundaria: rgba(90, 90, 90, 1);
+    --corimpacto: rgba(125, 185, 250, 1);
+
+}
+
+body {
     background-color: var(--corfundo);
     /*flex*/
     display: flex;
@@ -27,8 +34,7 @@ body{
     border-radius: 25px;
     background-color: var(--corprincipal);
     width: 560px;
-    height: 500px;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
 /*parte de cima do to-do list*/
@@ -42,12 +48,12 @@ body{
 }
 
 /*caixa da lista*/
-#listaprincipal{
+#listaprincipal {
     display: flex;
     justify-content: center;
 }
 
-#tasklist {
+#taskList {
     background-color: var(--corsecundaria);
     margin-bottom: 25px;
     width: 523px;
@@ -60,18 +66,21 @@ body{
     /*flex*/
     display: flex;
     flex-direction: row;
+    justify-content: center;
 
 }
 
 #input {
+    border-radius: 15px;
+    padding-left: 0px;
     width: 426px;
     height: 76px;
     background-color: var(--corsecundaria);
 }
 
 #botaoadd {
+    border-radius: 15px;
     margin-left: 25px;
-    /*flex*/
     width: 74px;
     height: 76px;
     background-color: var(--corimpacto);
