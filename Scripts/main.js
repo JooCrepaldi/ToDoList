@@ -12,6 +12,7 @@ function toggleDarkMode() {
 }
 
 function addNewLine(){
+    alert("cacholo flito");
     var inputValue = document.getElementById("input").value;
     // Variável inputValue captura o texto do input quando o botão "+" é pressionado
     var taskList = document.getElementById("taskList");
@@ -19,8 +20,9 @@ function addNewLine(){
     
     if(inputValue.trim() != ''){
         taskList = document.createElement("li");
-        taskList.appendChild(document.createTextNode(inputValue));
         taskList.appendChild(checkbox);
+        taskList.appendChild(document.createTextNode(inputValue));
+        
         (document.getElementById("taskList")).appendChild(taskList);
     }
     document.getElementById("input").value = '';
