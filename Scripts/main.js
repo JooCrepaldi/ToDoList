@@ -19,9 +19,10 @@ function addNewLine(){
     var checkbox = document.createElement("button");
     
     
-    
-    taskList = document.createElement("li");
-    taskList.appendChild(checkbox);
-    taskList.appendChild(document.createTextNode(inputValue));
-    (document.getElementById("taskList")).appendChild(taskList);
+    if(inputValue.trim() != ''){
+        taskList = document.createElement("li");
+        taskList.appendChild(checkbox);
+        taskList.appendChild(document.createTextNode(inputValue));
+        (document.getElementById("taskList")).appendChild(taskList);
+    }
 }
