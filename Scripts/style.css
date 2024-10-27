@@ -34,14 +34,19 @@ body {
 }
 
 #fundolista {
+    border-radius: 25px;
     background-color: var(--corprincipal);
     width: 560px;
 }
 
+/*parte de cima do to-do list*/
 #cima {
     display: flex;
     flex-direction: row;
-    margin-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
 /*caixa da lista*/
@@ -52,13 +57,15 @@ body {
 
 #tasklist {
     background-color: var(--corsecundaria);
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     width: 523px;
     justify-content: center;
 }
 
 /*parte de baixo do to-do list*/
 #baixo {
+    margin-bottom: 20px;
+    /*flex*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -71,6 +78,8 @@ body {
 }
 
 #botaoadd {
+    margin-left: 25px;
+    /*flex*/
     width: 74px;
     height: 76px;
     background-color: var(--corimpacto);
