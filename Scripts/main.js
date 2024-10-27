@@ -12,16 +12,18 @@ function toggleDarkMode() {
 }
 
 function addNewLine(){
+    alert("cacholo flito");
     var inputValue = document.getElementById("input").value;
     // Variável inputValue captura o texto do input quando o botão "+" é pressionado
-    var taskList = document.getElementById("taskList");
+    var taskList = document.getElementById("tasklist");
     var checkbox = document.createElement("button");
     
     if(inputValue.trim() != ''){
         taskList = document.createElement("li");
-        taskList.appendChild(document.createTextNode(inputValue));
         taskList.appendChild(checkbox);
-        (document.getElementById("taskList")).appendChild(taskList);
+        taskList.appendChild(document.createTextNode(inputValue));
+        
+        (document.getElementById("tasklist")).appendChild(taskList);
     }
     document.getElementById("input").value = '';
 }
