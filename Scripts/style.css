@@ -73,6 +73,7 @@ body {
 #input {
     border-radius: 15px;
     padding-left: 0px;
+    text-align: center;
     width: 426px;
     height: 76px;
     background-color: var(--corsecundaria);
