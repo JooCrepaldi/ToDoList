@@ -1,3 +1,4 @@
+/*deixa o arquivo em html em branco para ser alterado da forma que desejarmos*/
 * {
     margin: 0;
     padding: 0;
@@ -10,29 +11,4 @@
     --corprincipal:rgba(217, 217, 217, 1);
     --corsecundaria:rgba(205, 205, 205, 1);
     --corimpacto:rgba(105, 152, 229, 1);
-}
-
-body{
-    background-color: var(--corfundo);
-    /*flex*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: 'Space Grotesk';
-}
-
-#fundolista{
-    background-color: var(--corprincipal);
-    width: 560px;
-}
-
-#cima{
-    display: flex;
-    flex-direction: row;
-}
-
-#baixo{
-    display: flex;
-    flex-direction: row;
 }
