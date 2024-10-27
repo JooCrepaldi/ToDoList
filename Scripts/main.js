@@ -25,4 +25,5 @@ function addNewLine(){
         taskList.appendChild(document.createTextNode(inputValue));
         (document.getElementById("taskList")).appendChild(taskList);
     }
+    document.getElementById("input").value = '';
 }
