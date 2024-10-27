@@ -18,11 +18,10 @@ function addNewLine(){
     var taskList = document.getElementById("taskList");
     var checkbox = document.createElement("button");
     
-    
     if(inputValue.trim() != ''){
         taskList = document.createElement("li");
-        taskList.appendChild(checkbox);
         taskList.appendChild(document.createTextNode(inputValue));
+        taskList.appendChild(checkbox);
         (document.getElementById("taskList")).appendChild(taskList);
     }
     document.getElementById("input").value = '';
