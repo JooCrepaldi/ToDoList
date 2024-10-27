@@ -27,6 +27,7 @@ body{
     width: 560px;
 }
 
+/*alinhamento das linhas*/
 #cima{
     display: flex;
     flex-direction: row;
@@ -35,4 +36,10 @@ body{
 #baixo{
     display: flex;
     flex-direction: row;
+}
+
+#tasklist,
+li{
+    background-color: var(--corsecundaria);
+    margin-bottom: 2px;
 }
