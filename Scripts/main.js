@@ -1,5 +1,5 @@
 //Função que troca as cores do documento quando ativada
-function color (){
+function color(){
     
     
 }
