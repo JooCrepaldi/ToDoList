@@ -178,3 +178,8 @@ li {
 button{
     size: 50px;
 }
+
+
+.importantTask{
+    color: rgb(0, 0, 0);
+}
