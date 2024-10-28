@@ -15,9 +15,9 @@
 
 .darkmode {
     --corfundo: rgba(30, 30, 30, 1);
+    --corprincipal: rgba(50, 50, 50, 1);  
     --corsecundaria: rgba(90, 90, 90, 1);
     --corimpacto: rgba(125, 185, 250, 1);
-
 }
 
 body {
