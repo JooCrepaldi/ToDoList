@@ -14,6 +14,7 @@
     --corimpactohover: rgb(71, 115, 185);
 }
 
+/*cor do modo escuro*/
 .darkmode {
     --corfundo: rgba(30, 30, 30, 1);
     --corprincipal: rgba(50, 50, 50, 1);
