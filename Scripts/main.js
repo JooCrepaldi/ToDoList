@@ -1,14 +1,7 @@
 function toggleDarkMode() {
-  
     var body = document.body;
     var darkModeToggle = document.getElementById("dark-mode-toggle");
-  
     body.classList.toggle("dark-mode");
-    if (body.classList.contains("dark-mode")) {
-        darkModeToggle.textContent = "☀️";
-    } else {
-        darkModeToggle.textContent = "🌙";
-    }
 }
 
 /*Função que irá adicionar uma nova linha conforme  o usuário digitar algo no campo de texto*/
@@ -20,6 +13,14 @@ function addNewLine(){
     var taskList = document.getElementById("taskList");
     //checkbox funcionando como  um botão para marcar a tarefa como concluída
     var checkbox = document.createElement("button");
+    var delButton = document.createElement("button");
+    delButton.classList.add("trashCan");
+    delButton.textContent = "🗑";
+
+    delButton.onclick = function(){
+        taskList.style.display = "none";
+    }
+
     checkbox.classList.add("checkbox");
     checkbox.onclick = function(){
         //se a checkbox (que está pressionada) for igual a 1 (ou ao simbolo do vetor certo),  a tarefa é concluída e o simbolo some
@@ -37,8 +38,9 @@ function addNewLine(){
         taskList = document.createElement("li");
         taskList.appendChild(checkbox);
         taskList.appendChild(document.createTextNode(inputValue));
-        
+        taskList.appendChild(delButton);    
         (document.getElementById("taskList")).appendChild(taskList);
+        
     }
     document.getElementById("input").value = '';
 }

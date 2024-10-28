@@ -135,8 +135,31 @@ li {
     font-size: 16px;
     margin: 5px;
 }
+/* lixeira do li */
+.trashCan {
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    font-size: 16px;
+    margin: 5px;
+    transition: 0.5s;
+    background-color: white;
+    color: red;
+}
+
+.trashCan:hover{
+    background-color: red;
+    color: white;
+}
 
 /*cursor*/
 button{
     cursor: pointer;
 }
+
+/*----------Dark-Mode------------*/
+body.dark-mode {
+    transition: 1s;
+    background-color: #525252;
+}
+
