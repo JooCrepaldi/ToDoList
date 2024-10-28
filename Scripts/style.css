@@ -85,6 +85,13 @@ body {
     width: 56px;
     height: 56px;
     background-color: var(--corimpacto);
+    transition: 1s;
+}
+
+#botaoadd:hover{
+    border-radius: 100%;
+    transition: 1s;
+    /*Colocar uma cor de background*/
 }
 
 /*botôes do lado*/
