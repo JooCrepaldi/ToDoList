@@ -1,8 +1,3 @@
-function toggleDarkMode() {
-    var body = document.body;
-    var darkModeToggle = document.getElementById("dark-mode-toggle");
-    body.classList.toggle("dark-mode");
-}
 
 /*Função que irá adicionar uma nova linha conforme  o usuário digitar algo no campo de texto*/
 
