@@ -11,13 +11,16 @@
     --corprincipal: rgba(217, 217, 217, 1);
     --corsecundaria: rgba(205, 205, 205, 1);
     --corimpacto: rgba(105, 152, 229, 1);
+    --corimpactohover: rgb(71, 115, 185);
 }
 
+/*cor do modo escuro*/
 .darkmode {
     --corfundo: rgba(30, 30, 30, 1);
     --corprincipal: rgba(50, 50, 50, 1);
     --corsecundaria: rgba(90, 90, 90, 1);
-    --corimpacto: rgba(125, 185, 250, 1);
+    --corimpacto: rgb(71, 115, 185);
+    --corimpactohover:rgba(105, 152, 229, 1);
 }
 
 body {
@@ -85,6 +88,14 @@ body {
     width: 56px;
     height: 56px;
     background-color: var(--corimpacto);
+    transition: 0.5s;
+}
+
+/*HOVER*/
+#botaoadd:hover{
+    border-radius: 100%;
+    transition: 0.5s;
+    background-color:var(--corimpactohover);
 }
 
 /*botôes do lado*/
@@ -92,12 +103,13 @@ body {
     background-color: var(--corprincipal);
     width: 119px;
     height: 235px;
-    border-radius: 15px;
+    border-radius: 25px;
     margin-left: 30px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 /*coisinhas*/
@@ -135,6 +147,7 @@ li {
     color: white;
 }
 
+/*cursor*/
 button{
     cursor: pointer;
 }
