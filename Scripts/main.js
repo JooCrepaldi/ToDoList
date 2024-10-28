@@ -31,12 +31,11 @@ function addNewLine(){
         if(checkbox.textContent == "✅"){
             checkbox.textContent = '';
 
-            if(whichScreen == 0){
-                (document.getElementById("taskList")).appendChild(taskList);
+            if(taskList.classList.contains("importantTask")){
+                (document.getElementById("importantTaskList")).appendChild(taskList);
             }
             else{
-                taskList.classList.add("importantTask");
-                (document.getElementById("importantTaskList")).appendChild(taskList);
+                (document.getElementById("taskList")).appendChild(taskList);
             }
         }
 
@@ -56,6 +55,7 @@ function addNewLine(){
             (document.getElementById("taskList")).appendChild(taskList);
         }
         else{
+            taskList.classList.add("importantTask");
             (document.getElementById("importantTaskList")).appendChild(taskList);
         }
     }
@@ -82,6 +82,7 @@ function showDoneTasks(){
     (document.getElementById("taskList")).style.display = "none";
     (document.getElementById("importantTaskList")).style.display = "none";
     if((document.getElementById("doneTasks")).style.display != "block"){
+       
         (document.getElementById("doneTasks")).style.display = "block";
         (document.getElementById("input")).style.display = "none";
         (document.getElementById("botaoadd")).style.display = "none";
@@ -91,10 +92,12 @@ function showDoneTasks(){
         (document.getElementById("botaoadd")).style.display = "block";
         (document.getElementById("doneTasks")).style.display = "none";
         if(taskList.classList.contains("importantTask")){
+            whichScreen = 1;
             (document.getElementById("importantTaskList")).style.display = "block";
         }
         else{
+            whichScreen = 0;
             (document.getElementById("taskList")).style.display = "block";
         }
+        }
     }
-}
