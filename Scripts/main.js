@@ -1,3 +1,4 @@
+var whichScreen = 0;
 
 /*Função que irá adicionar uma nova linha conforme  o usuário digitar algo no campo de texto*/
 
@@ -5,7 +6,10 @@ function addNewLine(){
     // Variável inputValue captura o texto do input quando o botão "+" é pressionado
     var inputValue = document.getElementById("input").value;
     //Variável taskList é para ir adicionando as tarefas na lista conforme o usuário digita algo no campo de texto
-    var taskList = document.getElementById("taskList");
+    
+    var taskList;
+    
+
     //checkbox funcionando como  um botão para marcar a tarefa como concluída
     var checkbox = document.createElement("button");
     var delButton = document.createElement("button");
@@ -33,9 +37,26 @@ function addNewLine(){
         taskList = document.createElement("li");
         taskList.appendChild(checkbox);
         taskList.appendChild(document.createTextNode(inputValue));
-        taskList.appendChild(delButton);    
-        (document.getElementById("taskList")).appendChild(taskList);
-        
+        taskList.appendChild(delButton);
+        if(whichScreen == 0){
+            (document.getElementById("taskList")).appendChild(taskList);
+        }
+        else{
+            (document.getElementById("importantTaskList")).appendChild(taskList);
+        }
     }
     document.getElementById("input").value = '';
+}
+
+function switchScreen(){
+    if(whichScreen == 0){
+        (document.getElementById("importantTaskList")).style.display = "block";
+        (document.getElementById("taskList")).style.display = "none";
+        whichScreen = 1;
+    }
+    else{
+        (document.getElementById("importantTaskList")).style.display = "none";
+        (document.getElementById("taskList")).style.display = "block";
+        whichScreen = 0;
+    }
 }
