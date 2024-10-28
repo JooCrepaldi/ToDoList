@@ -30,6 +30,7 @@ body {
     font-family: 'Space Grotesk';
 }
 
+/*LISTA PRINCIPAL*/
 #fundolista {
     border-radius: 25px;
     background-color: var(--corprincipal);
@@ -72,16 +73,29 @@ body {
 
 #input {
     border-radius: 15px;
-    padding-left: 0px;
-    width: 426px;
-    height: 76px;
+    padding-left: 20px;
+    width: 406px;
+    height: 56px;
     background-color: var(--corsecundaria);
 }
 
 #botaoadd {
     border-radius: 15px;
     margin-left: 25px;
-    width: 74px;
-    height: 76px;
+    width: 56px;
+    height: 56px;
     background-color: var(--corimpacto);
+}
+
+/*BOTÕES DO LADO*/
+#fundobar {
+    margin-left: 30px;
+    height: 235px;
+    width: 119px;
+    border-radius: 25px;
+    background: var(--corprincipal);
+    /*flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
