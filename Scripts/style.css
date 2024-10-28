@@ -155,6 +155,6 @@ button{
 /*----------Dark-Mode------------*/
 body.dark-mode {
     transition: 1s;
-    background-color: #000000;
+    background-color: #525252;
 }
 
