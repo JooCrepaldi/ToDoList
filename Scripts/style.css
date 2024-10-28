@@ -91,6 +91,11 @@ body {
     transition: 0.5s;
 }
 
+/*cursor*/
+button{
+    cursor: pointer;
+}
+
 /*HOVER*/
 #botaoadd:hover{
     border-radius: 100%;
@@ -154,10 +159,7 @@ li {
     color: white;
 }
 
-/*cursor*/
-button{
-    cursor: pointer;
-}
+
 
 /*----------Dark-Mode------------*/
 body.dark-mode {
