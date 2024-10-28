@@ -1,4 +1,9 @@
 var whichScreen = 0;
+//Função que troca as cores do documento quando ativada
+function color(){
+    
+    
+}
 
 /*Função que irá adicionar uma nova linha conforme  o usuário digitar algo no campo de texto*/
 
