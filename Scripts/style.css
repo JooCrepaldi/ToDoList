@@ -151,3 +151,10 @@ li {
 button{
     cursor: pointer;
 }
+
+/*----------Dark-Mode------------*/
+body.dark-mode {
+    transition: 1s;
+    background-color: #000000;
+}
+
