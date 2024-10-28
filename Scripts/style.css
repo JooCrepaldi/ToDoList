@@ -11,13 +11,15 @@
     --corprincipal: rgba(217, 217, 217, 1);
     --corsecundaria: rgba(205, 205, 205, 1);
     --corimpacto: rgba(105, 152, 229, 1);
+    --corimpactohover: rgb(71, 115, 185);
 }
 
 .darkmode {
     --corfundo: rgba(30, 30, 30, 1);
     --corprincipal: rgba(50, 50, 50, 1);
     --corsecundaria: rgba(90, 90, 90, 1);
-    --corimpacto: rgba(125, 185, 250, 1);
+    --corimpacto: rgb(71, 115, 185);
+    --corimpactohover:rgba(105, 152, 229, 1);
 }
 
 body {
@@ -92,7 +94,7 @@ body {
 #botaoadd:hover{
     border-radius: 100%;
     transition: 0.5s;
-    background-color: var();/**************/
+    background-color:var(--corimpactohover);
 }
 
 /*botôes do lado*/
