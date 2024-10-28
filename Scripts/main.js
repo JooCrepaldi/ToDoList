@@ -27,14 +27,23 @@ function addNewLine(){
 
     checkbox.classList.add("checkbox");
     checkbox.onclick = function(){
-        //se a checkbox (que está pressionada) for igual a 1 (ou ao simbolo do vetor certo),  a tarefa é concluída e o simbolo some
-
+       
         if(checkbox.textContent == "✅"){
             checkbox.textContent = '';
+
+            if(whichScreen == 0){
+                (document.getElementById("taskList")).appendChild(taskList);
+            }
+            else{
+                taskList.classList.add("importantTask");
+                (document.getElementById("importantTaskList")).appendChild(taskList);
+            }
         }
+
         //se não, ele permanece  como está
         else{
             checkbox.textContent = "✅";
+            (document.getElementById("doneTasks")).appendChild(taskList);
         }
     }
     //se o valor do input for diferente de um espaço em branco, vai adicionar uma linha, com uma checkbox  e o texto do input
@@ -54,6 +63,8 @@ function addNewLine(){
 }
 
 function switchScreen(){
+    (document.getElementById("input")).style.display = "block";
+    (document.getElementById("botaoadd")).style.display = "block";
     if(whichScreen == 0){
         (document.getElementById("importantTaskList")).style.display = "block";
         (document.getElementById("taskList")).style.display = "none";
@@ -63,5 +74,27 @@ function switchScreen(){
         (document.getElementById("importantTaskList")).style.display = "none";
         (document.getElementById("taskList")).style.display = "block";
         whichScreen = 0;
+    }
+    (document.getElementById("doneTasks")).style.display = "none";
+}
+
+function showDoneTasks(){
+    (document.getElementById("taskList")).style.display = "none";
+    (document.getElementById("importantTaskList")).style.display = "none";
+    if((document.getElementById("doneTasks")).style.display != "block"){
+        (document.getElementById("doneTasks")).style.display = "block";
+        (document.getElementById("input")).style.display = "none";
+        (document.getElementById("botaoadd")).style.display = "none";
+    }
+    else{
+        (document.getElementById("input")).style.display = "block";
+        (document.getElementById("botaoadd")).style.display = "block";
+        (document.getElementById("doneTasks")).style.display = "none";
+        if(taskList.classList.contains("importantTask")){
+            (document.getElementById("importantTaskList")).style.display = "block";
+        }
+        else{
+            (document.getElementById("taskList")).style.display = "block";
+        }
     }
 }

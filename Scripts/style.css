@@ -169,3 +169,7 @@ li {
     background-color: red;
     color: white;
 }
+
+.importantTask{
+    color: rgb(255, 105, 105);
+}
