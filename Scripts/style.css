@@ -114,9 +114,14 @@ body {
 
 /*coisinhas*/
 li {
+    background-color: var(--corsecundaria);
     list-style: none;
-    margin: 4px;
-    text-align: center;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    align-items: center;
+    /*flex*/
     justify-content: center;
     display: flex;
     flex-direction: row;
