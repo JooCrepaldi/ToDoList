@@ -16,6 +16,15 @@ function addNewLine(){
     // Variável inputValue captura o texto do input quando o botão "+" é pressionado
     var taskList = document.getElementById("taskList");
     var checkbox = document.createElement("button");
+    checkbox.classList.add("checkbox");
+    checkbox.onclick = function(){
+        if(checkbox.textContent == "✅"){
+            checkbox.textContent = '';
+        }
+        else{
+            checkbox.textContent = "✅";
+        }
+    }
     
     if(inputValue.trim() != ''){
         taskList = document.createElement("li");
