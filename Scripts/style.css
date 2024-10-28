@@ -92,12 +92,13 @@ body {
     background-color: var(--corprincipal);
     width: 119px;
     height: 235px;
-    border-radius: 15px;
+    border-radius: 25px;
     margin-left: 30px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 /*coisinhas*/
@@ -119,6 +120,7 @@ li {
     margin: 5px;
 }
 
+/*cursor*/
 button{
     cursor: pointer;
 }
