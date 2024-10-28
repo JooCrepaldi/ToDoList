@@ -158,12 +158,3 @@ li {
     background-color: red;
     color: white;
 }
-
-
-
-/*----------Dark-Mode------------*/
-body.dark-mode {
-    transition: 1s;
-    background-color: #525252;
-}
-
