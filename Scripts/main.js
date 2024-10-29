@@ -68,6 +68,7 @@ function addNewLine(){
 }
 
 function switchScreen(){
+    document.getElementById("input").value = '';
     (document.getElementById("input")).style.display = "block";
     (document.getElementById("botaoadd")).style.display = "block";
     if(whichScreen == 0){
