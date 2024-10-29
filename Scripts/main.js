@@ -1,4 +1,6 @@
 var whichScreen = 0;
+var evenOrOdd = 0;
+var evenOrOdd2 = 0;
 //Função que troca as cores do documento quando ativada
 function color(){
     if(document.getElementById("theme-icon").textContent == "dark_mode"){
@@ -44,7 +46,6 @@ function addNewLine(){
             }
         }
 
-        //se não, ele permanece  como está
         else{
             checkbox.textContent = "✅";
             (document.getElementById("doneTasks")).appendChild(taskList);
@@ -52,15 +53,25 @@ function addNewLine(){
     }
     //se o valor do input for diferente de um espaço em branco, vai adicionar uma linha, com uma checkbox  e o texto do input
     if(inputValue.trim() != ''){
+        
         taskList = document.createElement("li");
         taskList.appendChild(checkbox);
         taskList.appendChild(document.createTextNode(inputValue));
         taskList.appendChild(delButton);
         if(whichScreen == 0){
-            (document.getElementById("taskList")).appendChild(taskList);
+            evenOrOdd++;
+            if(evenOrOdd % 2 == 0){
+                taskList.classList.add("evenTask");
+            }
+                (document.getElementById("taskList")).appendChild(taskList);
+            
         }
         else{
+            evenOrOdd2++;
             taskList.classList.add("importantTask");
+            if(evenOrOdd2 % 2 == 0){
+                taskList.style.backgroundColor = "#979797"
+            }
             (document.getElementById("importantTaskList")).appendChild(taskList);
         }
     }
