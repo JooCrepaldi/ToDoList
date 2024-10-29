@@ -1,7 +1,12 @@
 var whichScreen = 0;
 //Função que troca as cores do documento quando ativada
 function color(){
-    
+    if(document.getElementById("theme-icon").textContent == "dark_mode"){
+        document.getElementById("theme-icon").textContent = "light_mode";
+    }
+    else{
+        document.getElementById("theme-icon").textContent = "dark_mode";
+    }
     
 }
 
