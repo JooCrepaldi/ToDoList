@@ -40,7 +40,6 @@ body {
     border-radius: 25px;
     background-color: var(--corprincipal);
     width: 560px;
-    border-radius: 10px;
     box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -135,7 +134,7 @@ button {
 
 /*coisinhas*/
 li {
-    width: 520px;
+    width: 505px;
     height: 45px;
     background-color: var(--corsecundaria);
     list-style: none;
@@ -175,7 +174,7 @@ li {
 /* Tarefas que mudam o fundo dependendo se são pares ou ímpares */
 
 .evenTask{
-    background-color: rgb(161, 160, 160);
+    background-color:var(--corfundo)
 }
 
 .trashCan:hover {
