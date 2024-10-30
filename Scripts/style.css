@@ -108,6 +108,8 @@ button {
     cursor: pointer;
     background: none;
     border: none;
+    height: 32px;
+    width: 32px;
 }
 
 /*HOVER*/
