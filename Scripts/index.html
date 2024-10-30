@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="Icone Site" href="https://cdn-icons-png.flaticon.com/512/181/181570.png">
     <title>To Do List</title>
     <!--fonte-->
     <style>
@@ -22,7 +23,7 @@
         <div id="cima">
             <h1>To-Do list</h1>
             <button id="trocatema" onclick="toggleDarkMode()">
-                <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+                <span class="material-symbols-outlined" id="theme-icon" onclick="color()">dark_mode</span>
             </button>
         </div>
 
@@ -49,7 +50,7 @@
     <!--BOTÕES DO LADO-->
     <div id="fundobar">
         <button><!--botões de 'concluídos' e 'urgentes'-->
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined" onclick="showDoneTasks()">
                 check_circle
             </span>
         </button>

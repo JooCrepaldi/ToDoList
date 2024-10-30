@@ -172,6 +172,12 @@ li {
     color: red;
 }
 
+/* Tarefas que mudam o fundo dependendo se são pares ou ímpares */
+
+.evenTask{
+    background-color: rgb(161, 160, 160);
+}
+
 .trashCan:hover {
     background-color: red;
     color: white;
@@ -179,4 +185,5 @@ li {
 
 .importantTask{
     color: rgb(0, 0, 0);
+    background-color: #797979;
 }
