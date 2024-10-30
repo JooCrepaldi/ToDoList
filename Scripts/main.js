@@ -5,9 +5,13 @@ var evenOrOdd2 = 0;
 function color(){
     if(document.getElementById("theme-icon").textContent == "dark_mode"){
         document.getElementById("theme-icon").textContent = "light_mode";
+        body.classList.remove("dark_mode");
+        body.classList.add("light_mode");
     }
     else{
         document.getElementById("theme-icon").textContent = "dark_mode";
+        body.classList.remove("light_mode");
+        body.classList.add("dark_mode");
     }
     
 }
@@ -78,6 +82,7 @@ function addNewLine(){
     document.getElementById("input").value = '';
 }
 
+/*função para alternar entre as opções de tarefas concluídas, importantes e normais*/
 function switchScreen(){
     document.getElementById("input").value = '';
     (document.getElementById("input")).style.display = "block";

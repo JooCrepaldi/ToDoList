@@ -6,6 +6,7 @@
     outline: none;
 }
 
+/*local onde definimos as variáveis de cores para apenas irmos inserindo-as depois*/
 :root {
     --corfundo: rgba(160, 163, 158, 1);
     --corprincipal: rgba(217, 217, 217, 1);
@@ -13,6 +14,7 @@
     --corimpacto: rgba(105, 152, 229, 1);
     --corimpactohover: rgb(71, 115, 185);
     --cortexto: rgb(0, 0, 0);
+    --cortarefas: rgba(121, 137, 139, 0.466);
 }
 
 /*cor do modo escuro*/
@@ -23,6 +25,16 @@
     --corimpacto: rgb(71, 115, 185);
     --corimpactohover: rgba(105, 152, 229, 1);
     --cortexto: rgb(255, 255, 255);
+
+}
+.light-mode{
+    --corfundo: rgba(160, 163, 158, 1);
+    --corprincipal: rgba(217, 217, 217, 1);
+    --corsecundaria: rgba(205, 205, 205, 1);
+    --corimpacto: rgba(105, 152, 229, 1);
+    --corimpactohover: rgb(71, 115, 185);
+    --cortexto: rgb(0, 0, 0);
+    --cortarefas: rgba(121, 137, 139, 0.466);
 }
 
 body {
@@ -67,9 +79,9 @@ h1 {
     display: flex;
     justify-content: center;
 }
-
+/*região que hospeda a nossa lista de tarefas*/
 #taskList {
-    background-color: var(--corsecundaria);
+    background-color: var(--cortarefas);
     margin-bottom: 25px;
     width: 523px;
     display: flex;
@@ -78,8 +90,20 @@ h1 {
     flex-direction: column;
     border-radius: 5px;
 }
+/*parte das tarefas concluídas*/
 #doneTasks{
-    background-color: var(--corsecundaria);
+    background-color: var(--cortarefas);
+    margin-bottom: 25px;
+    width: 523px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+/*parte das tarefas importantes*/
+#importantTaskList{
+    background-color: var(--cortarefas);
     margin-bottom: 25px;
     width: 523px;
     display: flex;
@@ -148,7 +172,7 @@ button {
     flex-direction: column;
 }
 
-/*coisinhas*/
+/*CSS dos itens adicionados na lista*/
 li {
     width: 505px;
     height: 45px;
@@ -174,7 +198,7 @@ li {
     border-radius: 2px;
 }
 
-/* lixeira do li */
+/* lixeira para excluir tarefas */
 .trashCan {
     border-radius: 2px;
     text-align: center;
@@ -188,7 +212,9 @@ li {
 }
 
 /* Tarefas que mudam o fundo dependendo se são pares ou ímpares */
+/*Breno falando: isso daqui é mesmo necesário ou é só um tchan a mais pra mostrar serviço?*/
 
+/*tarefas pares:*/
 .evenTask{
     background-color:var(--corfundo)
 }
