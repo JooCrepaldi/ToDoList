@@ -56,6 +56,7 @@ body {
 
 h1 {
     color: var(--cortexto);
+    flex-grow: 1;/*manda o ícone da lua pro outro lado*/
 }
 
 ::placeholder {
@@ -103,9 +104,11 @@ h1 {
     transition: 0.5s;
 }
 
-/*cursor*/
+/*botões transparentes*/
 button {
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 /*HOVER*/
@@ -132,6 +135,8 @@ button {
 
 /*coisinhas*/
 li {
+    width: 520px;
+    height: 45px;
     background-color: var(--corsecundaria);
     list-style: none;
     margin-bottom: 15px;
@@ -140,14 +145,13 @@ li {
     border-radius: 10px;
     align-items: center;
     /*flex*/
-    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
 }
 
 /* checkbox do li */
 .checkbox {
-    text-align: center;
     height: 20px;
     width: 20px;
     font-size: 18px;
@@ -172,8 +176,6 @@ li {
     background-color: red;
     color: white;
 }
-
-/*ícones* ------------- consetar!!!!!!!*/
 
 .importantTask{
     color: rgb(0, 0, 0);
