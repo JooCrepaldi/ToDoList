@@ -18,7 +18,7 @@
 }
 
 /*cor do modo escuro*/
-.darkmode {
+.dark_mode {
     --corfundo: rgba(30, 30, 30, 1);
     --corprincipal: rgba(50, 50, 50, 1);
     --corsecundaria: rgba(90, 90, 90, 1);
@@ -27,7 +27,7 @@
     --cortexto: rgb(255, 255, 255);
 
 }
-.light-mode{
+.light_mode{
     --corfundo: rgba(160, 163, 158, 1);
     --corprincipal: rgba(217, 217, 217, 1);
     --corsecundaria: rgba(205, 205, 205, 1);
