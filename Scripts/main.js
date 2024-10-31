@@ -51,6 +51,7 @@ function addNewLine(){
             (document.getElementById("doneTasks")).appendChild(taskList);
         }
     }
+
     //se o valor do input for diferente de um espaço em branco, vai adicionar uma linha, com uma checkbox  e o texto do input
     if(inputValue.trim() != ''){
         
@@ -75,6 +76,7 @@ function addNewLine(){
             (document.getElementById("importantTaskList")).appendChild(taskList);
         }
     }
+
     document.getElementById("input").value = '';
 }
 
