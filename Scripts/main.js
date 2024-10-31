@@ -21,7 +21,7 @@ function addNewLine(){
     var taskList;
     
 
-    //checkbox funcionando como  um botão para marcar a tarefa como concluída
+    //checkbox funcionando como  um botão para adicionar a tarefa na lista de tarefas concluídas
     var checkbox = document.createElement("button");
     var delButton = document.createElement("button");
     delButton.classList.add("trashCan");
