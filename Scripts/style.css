@@ -78,6 +78,7 @@ h1 {
 #listaprincipal {
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 /*região que hospeda a nossa lista de tarefas*/
 #taskList {
@@ -93,8 +94,8 @@ h1 {
 /*parte das tarefas concluídas*/
 #doneTasks{
     background-color: var(--cortarefas);
-    margin-bottom: 25px;
-    width: 523px;
+    margin: 25px;
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,7 +106,7 @@ h1 {
 #importantTaskList{
     background-color: var(--cortarefas);
     margin-bottom: 25px;
-    width: 523px;
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,13 +175,11 @@ button {
 
 /*CSS dos itens adicionados na lista*/
 li {
-    width: 505px;
+    width: 95%; 
     height: 45px;
     background-color: var(--corsecundaria);
     list-style: none;
-    margin-bottom: 15px;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin: 20px;
     border-radius: 10px;
     /*flex*/
     align-items: center;
