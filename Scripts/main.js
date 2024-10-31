@@ -9,7 +9,6 @@ function color(){
     else{
         document.getElementById("theme-icon").textContent = "dark_mode";
     }
-    
 }
 
 /*Função que irá adicionar uma nova linha conforme  o usuário digitar algo no campo de texto*/
