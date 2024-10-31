@@ -117,5 +117,5 @@ function showDoneTasks(){
             whichScreen = 0;
             (document.getElementById("taskList")).style.display = "block";
         }
-        }
     }
+}
