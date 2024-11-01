@@ -114,6 +114,7 @@ function showDoneTasks(){
         (document.getElementById("botaoadd")).style.display = "none";
     }
     else{
+        
         (document.getElementById("input")).style.display = "block";
         (document.getElementById("botaoadd")).style.display = "block";
         (document.getElementById("doneTasks")).style.display = "none";
