@@ -76,6 +76,8 @@ h1 {
 
 /*caixa da lista*/
 #listaprincipal {
+    /* Padding 0px tá impedindo que o li ultrapasse o tamanho da div, sem limitar o tamanho que elas podem dar stretch */
+    padding: 0px;
     display: flex;
     justify-content: center;
 }

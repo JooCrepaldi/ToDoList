@@ -26,7 +26,7 @@ function addNewLine(){
     var delButton = document.createElement("button");
     delButton.classList.add("trashCan");
     delButton.textContent = "🗑";
-
+    // Botão que exclui a tarefa referente
     delButton.onclick = function(){
         taskList.style.display = "none";
     }
@@ -36,10 +36,11 @@ function addNewLine(){
        
         if(checkbox.textContent == "✅"){
             checkbox.textContent = '';
-
+            //  Se a tarefa referente tiver a classe importantTask ela é adicionada na seção de tarefas importantes
             if(taskList.classList.contains("importantTask")){
                 (document.getElementById("importantTaskList")).appendChild(taskList);
             }
+            // Caso contrário é adicionada na seção de tarefas normais
             else{
                 (document.getElementById("taskList")).appendChild(taskList);
             }
