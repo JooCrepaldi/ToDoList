@@ -11,7 +11,6 @@ function color(){
     }
     else{
         document.getElementById("theme-icon").textContent = "dark_mode";
-        document.getElementById("fundolista").classList.remove("light_mode");
 
         (document.body).classList.remove("dark_mode");
         (document.body).classList.toggle("light_mode");
@@ -114,7 +113,7 @@ function showDoneTasks(){
         (document.getElementById("botaoadd")).style.display = "none";
     }
     else{
-        
+
         (document.getElementById("input")).style.display = "block";
         (document.getElementById("botaoadd")).style.display = "block";
         (document.getElementById("doneTasks")).style.display = "none";
