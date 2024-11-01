@@ -3,11 +3,18 @@ var evenOrOdd = 0;
 var evenOrOdd2 = 0;
 //Função que troca as cores do documento quando ativada
 function color(){
-    if(document.getElementById("theme-icon").textContent == "dark_mode"){
-        document.getElementById("theme-icon").textContent = "light_mode";
+    if(document.getElementById("theme-icon").textContent == "light_mode"){
+        document.getElementById("theme-icon").textContent = "dark_mode";
+        document.getElementById("fundolista").classList.remove("dark_mode");
+        document.getElementById("fundolista").classList.add("light_mode");
+        document.getElementById("fundobar").classList.add("light_mode");
     }
     else{
-        document.getElementById("theme-icon").textContent = "dark_mode";
+        document.getElementById("theme-icon").textContent = "light_mode";
+        document.getElementById("fundolista").classList.remove("light_mode");
+        document.getElementById("fundobar").classList.remove("light_mode");
+        document.getElementById("fundobar").classList.add("dark_mode");
+        document.getElementById("fundolista").classList.add("dark_mode");
     }
 }
 
@@ -118,5 +125,5 @@ function showDoneTasks(){
             whichScreen = 0;
             (document.getElementById("taskList")).style.display = "block";
         }
-        }
     }
+}
