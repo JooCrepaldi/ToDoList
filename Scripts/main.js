@@ -40,7 +40,7 @@ function addNewLine(){
     checkbox.classList.add("checkbox");
     checkbox.onclick = function(){
        
-        if(checkbox.textContent == "✅"){
+        if(checkbox.textContent == "✔"){
             checkbox.textContent = '';
             //  Se a tarefa referente tiver a classe importantTask ela é adicionada na seção de tarefas importantes
             if(taskList.classList.contains("importantTask")){
@@ -53,7 +53,7 @@ function addNewLine(){
         }
 
         else{
-            checkbox.textContent = "✅";
+            checkbox.textContent = "✔";
             (document.getElementById("doneTasks")).appendChild(taskList);
         }
     }
