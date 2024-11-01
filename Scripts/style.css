@@ -226,7 +226,7 @@ li {
     font-size: 18px;
     margin: 5px;
     transition: 0.5s;
-    background-color: white;
+    background-color: aliceblue;
     color: red;
     transition: 1s;
 }
