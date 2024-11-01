@@ -25,7 +25,10 @@
     --corimpacto: rgb(71, 115, 185);
     --corimpactohover: rgba(105, 152, 229, 1);
     --cortexto: rgb(255, 255, 255);
-
+    li{
+        color: #000000;
+        background-color: #a1a1a1;
+    }
 }
 .light_mode{
     --corfundo: rgba(160, 163, 158, 1);
@@ -79,15 +82,18 @@ h1 {
     transition: 1s;
 }
 
+
 /*caixa da lista*/
 #listaprincipal {
     /* Padding 0px tá impedindo que o li ultrapasse o tamanho da div, sem limitar o tamanho que elas podem dar stretch */
+    /*padding não funcionou, ainda tá estourando a div*/
     padding: 0px;
     display: flex;
     justify-content: center;
     margin: 0 auto;
     transition: 1s;
 }
+
 /*região que hospeda a nossa lista de tarefas*/
 #taskList {
     background-color: var(--cortarefas);
@@ -98,7 +104,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     border-radius: 5px;
-    transition: 1s;
+    transition: 1s;  
 }
 /*parte das tarefas concluídas*/
 #doneTasks{
@@ -110,7 +116,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     border-radius: 5px;
-    transition: 1s;
+    transition: 1s;   
 }
 /*parte das tarefas importantes*/
 #importantTaskList{
@@ -123,6 +129,7 @@ h1 {
     flex-direction: column;
     border-radius: 5px;
     transition: 1s;
+    
 }
 
 /*parte de baixo do to-do list*/
