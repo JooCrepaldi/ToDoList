@@ -3,18 +3,18 @@ var evenOrOdd = 0;
 var evenOrOdd2 = 0;
 //Função que troca as cores do documento quando ativada
 function color(){
-    if(document.getElementById("theme-icon").textContent == "light_mode"){
-        document.getElementById("theme-icon").textContent = "dark_mode";
-        document.getElementById("fundolista").classList.remove("dark_mode");
-        document.getElementById("fundolista").classList.add("light_mode");
-        document.getElementById("fundobar").classList.add("light_mode");
+    if(!(document.getElementById("theme-icon").textContent == "light_mode")){
+        document.getElementById("theme-icon").textContent = "light_mode";
+
+        (document.body).classList.remove("light_mode");
+        (document.body).classList.toggle("dark_mode");
     }
     else{
-        document.getElementById("theme-icon").textContent = "light_mode";
+        document.getElementById("theme-icon").textContent = "dark_mode";
         document.getElementById("fundolista").classList.remove("light_mode");
-        document.getElementById("fundobar").classList.remove("light_mode");
-        document.getElementById("fundobar").classList.add("dark_mode");
-        document.getElementById("fundolista").classList.add("dark_mode");
+
+        (document.body).classList.remove("dark_mode");
+        (document.body).classList.toggle("light_mode");
     }
 }
 
