@@ -240,7 +240,7 @@ h2{
 
 /*tarefas pares:*/
 .evenTask{
-    background-color:var(--corfundo)
+    background-color:var(--corfundo);
     transition: 1s;
 }
 
