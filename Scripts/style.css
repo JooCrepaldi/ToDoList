@@ -54,6 +54,7 @@ body {
     background-color: var(--corprincipal);
     width: 560px;
     box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
+    transition: 1s;
 }
 
 /*parte de cima do to-do list*/
@@ -64,15 +65,18 @@ body {
     margin-bottom: 25px;
     margin-left: 35px;
     margin-right: 35px;
+    transition: 1s;
 }
 
 h1 {
     color: var(--cortexto);
     flex-grow: 1;/*manda o ícone da lua pro outro lado*/
+    transition: 1s;
 }
 
 ::placeholder {
     color: var(--cortexto);
+    transition: 1s;
 }
 
 /*caixa da lista*/
@@ -82,6 +86,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    transition: 1s;
 }
 /*região que hospeda a nossa lista de tarefas*/
 #taskList {
@@ -93,6 +98,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     border-radius: 5px;
+    transition: 1s;
 }
 /*parte das tarefas concluídas*/
 #doneTasks{
@@ -104,6 +110,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     border-radius: 5px;
+    transition: 1s;
 }
 /*parte das tarefas importantes*/
 #importantTaskList{
@@ -115,6 +122,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     border-radius: 5px;
+    transition: 1s;
 }
 
 /*parte de baixo do to-do list*/
@@ -124,6 +132,7 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    transition: 1s;
 
 }
 
@@ -133,6 +142,7 @@ h1 {
     width: 406px;
     height: 56px;
     background-color: var(--corsecundaria);
+    transition: 1s;
 }
 
 #botaoadd {
@@ -152,6 +162,7 @@ button {
     border: none;
     height: 32px;
     width: 32px;
+    transition: 1s;
 }
 
 /*HOVER*/
@@ -159,6 +170,7 @@ button {
     border-radius: 100%;
     transition: 0.5s;
     background-color: var(--corimpactohover);
+    transition: 1s;
 }
 
 /*botôes do lado*/
@@ -174,6 +186,7 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: 1s;
 }
 
 /*CSS dos itens adicionados na lista*/
@@ -189,6 +202,7 @@ li {
     text-align: center;
     display: flex;
     flex-direction: row;
+    transition: 1s;
 }
 
 /* checkbox do li */
@@ -199,6 +213,7 @@ li {
     font-size: 18px;
     margin: 5px;
     border-radius: 2px;
+    transition: 1s;
 }
 
 /* lixeira para excluir tarefas */
@@ -212,10 +227,12 @@ li {
     transition: 0.5s;
     background-color: white;
     color: red;
+    transition: 1s;
 }
 
 h2{
     text-align: center;
+    transition: 1s;
 }
 
 /* Tarefas que mudam o fundo dependendo se são pares ou ímpares */
@@ -224,14 +241,17 @@ h2{
 /*tarefas pares:*/
 .evenTask{
     background-color:var(--corfundo)
+    transition: 1s;
 }
 
 .trashCan:hover {
     background-color: red;
     color: white;
+    transition: 1s;
 }
 
 .importantTask{
     color: rgb(0, 0, 0);
+    transition: 1s;
     background-color: #797979;
 }
