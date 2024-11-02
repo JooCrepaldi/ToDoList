@@ -15,6 +15,7 @@
     --corimpactohover: rgb(71, 115, 185);
     --cortexto: rgb(0, 0, 0);
     --cortarefas: rgba(121, 137, 139, 0.466);
+    --tarefaspares: rgba(152, 153, 153, 0.466);
 }
 
 /*cor do modo escuro*/
@@ -25,10 +26,8 @@
     --corimpacto: rgb(71, 115, 185);
     --corimpactohover: rgba(105, 152, 229, 1);
     --cortexto: rgb(255, 255, 255);
-    li{
-        color: #000000;
-        background-color: #a1a1a1;
-    }
+    /* Cor para as tarefas secundárias, porque dar --corfundo para elas é uma ideia bem ruim */
+    --tarefaspares: rgba(82, 85, 85, 0.466);
 }
 .light_mode{
     --corfundo: rgba(160, 163, 158, 1);
@@ -38,6 +37,7 @@
     --corimpactohover: rgb(71, 115, 185);
     --cortexto: rgb(0, 0, 0);
     --cortarefas: rgba(121, 137, 139, 0.466);
+    --tarefaspares: rgba(152, 153, 153, 0.466);
 }
 
 body {
@@ -248,7 +248,7 @@ h2{
 
 /*tarefas pares:*/
 .evenTask{
-    background-color:var(--corfundo);
+    background-color:var(--tarefaspares);
     transition: 1s;
 }
 
