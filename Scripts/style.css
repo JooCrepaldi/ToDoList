@@ -25,10 +25,7 @@
     --corimpacto: rgb(71, 115, 185);
     --corimpactohover: rgba(105, 152, 229, 1);
     --cortexto: rgb(255, 255, 255);
-    li{
-        color: #000000;
-        background-color: #a1a1a1;
-    }
+    --cortarefas: rgba(121, 137, 139, 0.466);
 }
 .light_mode{
     --corfundo: rgba(160, 163, 158, 1);
@@ -202,9 +199,9 @@ li {
     height: 45px;
     background-color: var(--corsecundaria);
     list-style: none;
-    margin: 10px;
     border-radius: 10px;
     /*flex*/
+    margin: 25px;
     align-items: center;
     text-align: center;
     display: flex;
