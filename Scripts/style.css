@@ -195,7 +195,7 @@ li {
     height: 45px;
     background-color: var(--corsecundaria);
     list-style: none;
-    margin: 20px;
+    margin: 6px;
     border-radius: 10px;
     /*flex*/
     align-items: center;
