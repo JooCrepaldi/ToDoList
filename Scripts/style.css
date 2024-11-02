@@ -363,23 +363,3 @@ h2{
 #Tarefas:hover #tituloTarefas {
     display: block;
 }
-
-#reset {
-    text-align: center;
-    top: 25%;
-    font-size: 20px;
-    cursor: pointer;
-    position: fixed;
-    left: 10px;
-    color: rgb(255, 255, 255);
-    background-color: #333;       
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    transition: 1s;
-}
-
-#reset:hover {
-    background-color: #555;
-    border-radius: 100%;
-}
