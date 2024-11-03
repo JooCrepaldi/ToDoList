@@ -200,6 +200,7 @@ button {
 li {
     width: 95%; 
     height: 45px;
+    color: var(--cortexto);
     background-color: var(--corsecundaria);
     list-style: none;
     border-radius: 10px;
@@ -239,6 +240,7 @@ li {
 }
 
 h2{
+    color: var(--cortexto);
     text-align: center;
     transition: 1s;
 }
