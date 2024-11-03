@@ -94,11 +94,13 @@ function switchScreen(){
         (document.getElementById("importantTaskList")).style.display = "block";
         (document.getElementById("taskList")).style.display = "none";
         whichScreen = 1;
+        alert("sdasd");
     }
     else{
         (document.getElementById("importantTaskList")).style.display = "none";
         (document.getElementById("taskList")).style.display = "block";
         whichScreen = 0;
+        alert("cara 2");
     }
     (document.getElementById("doneTasks")).style.display = "none";
 }
@@ -106,6 +108,7 @@ function switchScreen(){
 function showDoneTasks(){
     (document.getElementById("taskList")).style.display = "none";
     (document.getElementById("importantTaskList")).style.display = "none";
+
     if((document.getElementById("doneTasks")).style.display != "block"){
        
         (document.getElementById("doneTasks")).style.display = "block";
@@ -117,12 +120,12 @@ function showDoneTasks(){
         (document.getElementById("input")).style.display = "block";
         (document.getElementById("botaoadd")).style.display = "block";
         (document.getElementById("doneTasks")).style.display = "none";
-        if(taskList.classList.contains("importantTask")){
-            whichScreen = 1;
+        if(whichScreen == 1){
+            
             (document.getElementById("importantTaskList")).style.display = "block";
         }
         else{
-            whichScreen = 0;
+            
             (document.getElementById("taskList")).style.display = "block";
         }
     }
