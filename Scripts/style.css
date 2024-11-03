@@ -282,8 +282,8 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    top:14%;
     width: 1%;
+    top:10%;
     background-color: #303030;
     position: fixed;
     min-width: 50px;
@@ -303,7 +303,7 @@ h2{
     background-color: #303030;
     position: fixed;
     min-width: 50px;
-    height: 700px;
+    height: 70%;
     right: 0;
     padding: 10px;
     border: none;
@@ -364,24 +364,4 @@ h2{
 #Tarefas:hover #tarefasFeitas,
 #Tarefas:hover #tituloTarefas {
     display: block;
-}
-
-#reset {
-    text-align: center;
-    top: 25%;
-    font-size: 20px;
-    cursor: pointer;
-    position: fixed;
-    left: 10px;
-    color: rgb(255, 255, 255);
-    background-color: #333;       
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    transition: 1s;
-}
-
-#reset:hover {
-    background-color: #555;
-    border-radius: 100%;
 }
