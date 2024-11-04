@@ -315,6 +315,8 @@ h2{
 
 #tarefasFeitas {
     border: 0;
+    width: auto;
+    height: auto;
     border-radius: 100px;
     color: white;
     background-color: #575757;
