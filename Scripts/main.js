@@ -1,6 +1,13 @@
 var whichScreen = 0;
 var evenOrOdd = 0;
 var evenOrOdd2 = 0;
+var qCriada = document.getElementById("totalCriado");
+
+var qApagada = document.getElementById("totalApagado");
+
+var qFeita = document.getElementById("totalConcluido");
+
+
 //Função que troca as cores do documento quando ativada
 function color(){
     if(!(document.getElementById("theme-icon").textContent == "light_mode")){
@@ -91,16 +98,14 @@ function switchScreen(){
     (document.getElementById("input")).style.display = "block";
     (document.getElementById("botaoadd")).style.display = "block";
     if(whichScreen == 0){
-        (document.getElementById("importantTaskList")).style.display = "block";
+        (document.getElementById("importantTaskList")).style.display = "flex";
         (document.getElementById("taskList")).style.display = "none";
         whichScreen = 1;
-        alert("sdasd");
     }
     else{
         (document.getElementById("importantTaskList")).style.display = "none";
-        (document.getElementById("taskList")).style.display = "block";
+        (document.getElementById("taskList")).style.display = "flex";
         whichScreen = 0;
-        alert("cara 2");
     }
     (document.getElementById("doneTasks")).style.display = "none";
 }
@@ -109,9 +114,9 @@ function showDoneTasks(){
     (document.getElementById("taskList")).style.display = "none";
     (document.getElementById("importantTaskList")).style.display = "none";
 
-    if((document.getElementById("doneTasks")).style.display != "block"){
+    if((document.getElementById("doneTasks")).style.display != "flex"){
        
-        (document.getElementById("doneTasks")).style.display = "block";
+        (document.getElementById("doneTasks")).style.display = "flex";
         (document.getElementById("input")).style.display = "none";
         (document.getElementById("botaoadd")).style.display = "none";
     }
@@ -122,11 +127,12 @@ function showDoneTasks(){
         (document.getElementById("doneTasks")).style.display = "none";
         if(whichScreen == 1){
             
-            (document.getElementById("importantTaskList")).style.display = "block";
+            (document.getElementById("importantTaskList")).style.display = "flex";
         }
         else{
             
-            (document.getElementById("taskList")).style.display = "block";
+            (document.getElementById("taskList")).style.display = "flex";
         }
     }
 }
+
