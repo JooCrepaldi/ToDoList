@@ -33,6 +33,8 @@ body{
 #Tarefas{
     width: 1%;
     background-color: var(--corsecundaria);
+    position: fixed;
+    left: 1%;
 }
 
 #Tarefas:hover {
