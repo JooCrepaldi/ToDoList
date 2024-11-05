@@ -20,7 +20,7 @@ function color(){
         document.getElementById("theme-icon").textContent = "dark_mode";
 
         (document.body).classList.remove("dark_mode");
-        (document.body).classList.toggle("light_mode");
+        (document.body).classList.toggle('light_mode');
     }
 }
 
@@ -38,7 +38,13 @@ function addNewLine(){
     var checkbox = document.createElement("button");
     var delButton = document.createElement("button");
     delButton.classList.add("trashCan");
-    delButton.textContent = "🗑";
+
+
+    const icon = document.createElement('span');
+    icon.classList.add('material-icons');
+    icon.textContent = 'delete';
+    delButton.appendChild(icon);
+
     // Botão que exclui a tarefa referente
     delButton.onclick = function(){
         taskList.style.display = "none";

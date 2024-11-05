@@ -18,13 +18,14 @@
 </head>
 
 <body>
-    <div id="Tarefas">  
+    <!--SIDEBAR-->
+    <div id="Tarefas" style="display: none;">
 
-        <div id="Seta">
-            Sidebar
-        </div>
+        <span class="material-symbols-outlined">
+            chevron_right
+        </span>
 
-        <center>
+        <div>
             <div id="tituloTarefas">
                 <u>Histórico de Tarefas</u>
             </div>
@@ -44,33 +45,41 @@
                 <p id="totalConcluido">0</p>
             </div>
 
-                <button id="tarefasFeitas" onclick="Tarefinhas()">&nbsp;Tarefas Feitas&nbsp;</button>
-        </center>
+            <button id="tarefasFeitas" onclick="Tarefinhas()">&nbsp;Tarefas Feitas&nbsp;</button>
+        </div>
     </div>
+
+
+
     <!--LISTA PRINCIPAL-->
     <div id="fundolista"><!--fundo da lista-->
         <div id="cima">
-            <h1>To-Do list</h1>
+            <h1>MY To-Do list</h1>
             <button id="trocatema" onclick="toggleDarkMode()">
                 <span class="material-symbols-outlined" id="theme-icon" onclick="color()">dark_mode</span>
             </button>
         </div>
 
         <div>
-            <div id="listaprincipal"><!--espaço da lista-->
-                <ul id="taskList">
-                    <h2>Tarefas Normais</h2>
-                </ul>
-                <ul id="importantTaskList" style="display: none;">
-                    <h2> Tarefas Importantes </h2>
-                </ul>
-                <ul id="doneTasks" style="display: none;">
-                    <h2> Tarefas Concluídas</h2>
-                </ul>
+            <div>
+                <p>Tarefas</p>
+                <p style="display: none;">Importantes</p>
+                <p style="display: none;">Concluídas</p>
+
+                <div id="listaprincipal"><!--espaço da lista-->
+                    <ul id="taskList">
+                    </ul>
+
+                    <ul id="importantTaskList" style="display: none;">
+                    </ul>
+
+                    <ul id="doneTasks" style="display: none;">
+                    </ul>
+                </div>
             </div>
 
             <div id="baixo">
-                <input type="text" id="input" placeholder="digite uma tarefa..." maxlength="50"><!--input de texto-->
+                <input type="text" id="input" placeholder="digite uma tarefa..." maxlength="45"><!--input de texto-->
                 <button id="botaoadd" onclick="addNewLine()">+</button><!--botão para adicionar-->
             </div>
         </div>

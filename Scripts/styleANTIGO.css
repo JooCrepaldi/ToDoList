@@ -1,0 +1,375 @@
+/*deixa o arquivo em html em branco para ser alterado da forma que desejarmos*/
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+/*local onde definimos as variáveis de cores para apenas irmos inserindo-as depois*/
+:root {
+    --corfundo: rgba(160, 163, 158, 1);
+    --corprincipal: rgba(217, 217, 217, 1);
+    --corsecundaria: rgba(205, 205, 205, 1);
+    --corimpacto: rgba(105, 152, 229, 1);
+    --corimpactohover: rgb(71, 115, 185);
+    --cortexto: rgb(0, 0, 0);
+    --cortarefas: rgba(121, 137, 139, 0.466);
+    --tarefaspares: rgba(152, 153, 153, 0.466);
+}
+
+/*cor do modo escuro*/
+.dark_mode {
+    --corfundo: rgba(30, 30, 30, 1);
+    --corprincipal: rgba(50, 50, 50, 1);
+    --corsecundaria: rgba(90, 90, 90, 1);
+    --corimpacto: rgb(71, 115, 185);
+    --corimpactohover: rgba(105, 152, 229, 1);
+    --cortexto: rgb(255, 255, 255);
+    /* Cor para as tarefas secundárias, porque dar --corfundo para elas é uma ideia bem ruim */
+    --tarefaspares: rgba(82, 85, 85, 0.466);
+}
+.light_mode{
+    --corfundo: rgba(160, 163, 158, 1);
+    --corprincipal: rgba(217, 217, 217, 1);
+    --corsecundaria: rgba(205, 205, 205, 1);
+    --corimpacto: rgba(105, 152, 229, 1);
+    --corimpactohover: rgb(71, 115, 185);
+    --cortexto: rgb(0, 0, 0);
+    --cortarefas: rgba(121, 137, 139, 0.466);
+    --tarefaspares: rgba(152, 153, 153, 0.466);
+}
+
+body {
+    background-color: var(--corfundo);
+    /*flex*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Space Grotesk';
+    transition: 1s;
+}
+
+/*LISTA PRINCIPAL*/
+#fundolista {
+    border-radius: 25px;
+    background-color: var(--corprincipal);
+    width: 30%;
+    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
+    transition: 1s;
+}
+
+/*parte de cima do to-do list*/
+#cima {
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 35px;
+    margin-right: 35px;
+    transition: 1s;     
+}
+
+h1 {
+    color: var(--cortexto);
+    flex-grow: 1;/*manda o ícone da lua pro outro lado*/
+    transition: 1s;
+}
+
+::placeholder {
+    color: var(--cortexto);
+    transition: 1s;
+}
+
+
+/*caixa da lista*/
+#listaprincipal {
+    /* Padding 0px tá impedindo que o li ultrapasse o tamanho da div, sem limitar o tamanho que elas podem dar stretch */
+    /*padding não funcionou, ainda tá estourando a div*/    
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    transition: 1s;
+}
+
+/*região que hospeda a nossa lista de tarefas*/
+#taskList {
+    background-color: var(--cortarefas);
+    margin-bottom: 25px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 25px;
+    transition: 1s;  
+}
+/*parte das tarefas concluídas*/
+#doneTasks{
+    background-color: var(--cortarefas);
+    margin: 25px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+    transition: 1s;   
+}
+/*parte das tarefas importantes*/
+#importantTaskList{
+    background-color: var(--cortarefas);
+    margin-bottom: 25px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+    transition: 1s;
+    
+}
+
+/*parte de baixo do to-do list*/
+#baixo {
+    margin-bottom: 20px;
+    /*flex*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: 1s;
+}
+
+#input {
+    border-radius: 15px;
+    padding-left: 20px;
+    width: 406px;
+    height: 56px;
+    background-color: var(--corsecundaria);
+    transition: 1s;
+    color: var(--cortexto);
+}
+
+#botaoadd {
+    font-size: 30px;
+    border-radius: 15px;
+    margin-left: 25px;
+    width: 56px;
+    height: 56px;
+    background-color: var(--corimpacto);
+    transition: 0.5s;
+}
+
+/*botões transparentes*/
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    height: 32px;
+    width: 32px;
+    transition: 1s;
+}
+
+/*HOVER*/
+#botaoadd:hover {
+    border-radius: 100%;
+    transition: 0.5s;
+    background-color: var(--corimpactohover);
+    transition: 1s;
+}
+
+#botaoadd:active {
+    background-color: #4add4a;
+    transition: 0.01s;
+}
+
+/*botôes do lado*/
+#fundobar {
+    background-color: var(--corprincipal);
+    width: 119px;
+    height: 235px;
+    border-radius: 25px;
+    margin-left: 30px;
+    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
+    /*flex*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 1s;
+}
+
+/*CSS dos itens adicionados na lista*/
+li {
+    width: 95%; 
+    height: 45px;
+    color: var(--cortexto);
+    background-color: var(--corsecundaria);
+    list-style: none;
+    border-radius: 10px;
+    /*flex*/
+    margin: 25px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    transition: 1s;
+}
+
+/* checkbox do li */
+.checkbox {
+    height: 20px;
+    width: 20px;
+    background-color: aliceblue;
+    color: #4add4a;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 2px;
+    transition: 1s;
+}
+
+/* lixeira para excluir tarefas */
+.trashCan {
+    border-radius: 2px;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    font-size: 18px;
+    margin: 5px;
+    transition: 0.5s;
+    background-color: aliceblue;
+    color: red;
+    transition: 1s;
+}
+
+h2{
+    color: var(--cortexto);
+    text-align: center;
+    transition: 1s;
+}
+
+/* Tarefas que mudam o fundo dependendo se são pares ou ímpares */
+/*Breno falando: isso daqui é mesmo necesário ou é só um tchan a mais pra mostrar serviço?*/
+
+/*tarefas pares:*/
+.evenTask{
+    background-color:var(--tarefaspares);
+    transition: 1s;
+}
+
+.trashCan:hover {
+    background-color: red;
+    color: white;
+    transition: 1s;
+}
+
+.importantTask{
+    color: rgb(0, 0, 0);
+    transition: 1s;
+    background-color: #797979;
+}
+
+/*-----------------------------------------TESTESIDEBAR-------------------------------------------------*/
+
+#Tarefas #Seta {
+    font-size: 70px;
+    color: rgb(236, 236, 236);
+    transform: rotate(-90deg);
+}
+
+#Tarefas:hover #Seta {
+    display: none;
+}
+
+#Tarefas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1%;
+    top:10%;
+    background-color: #303030;
+    position: fixed;
+    min-width: 50px;
+    height: 83%;
+    right: -2px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s;
+    z-index: 1000;
+    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
+}
+
+#Tarefas:hover {
+    display: flex;
+    width: 30%;
+    background-color: #303030;
+    position: fixed;
+    min-width: 50px;
+    height: 70%;
+    right: 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s;
+    z-index: 1000;
+    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
+}
+
+#tarefasFeitas {
+    border: 0;
+    width: auto;
+    height: auto;
+    border-radius: 100px;
+    color: white;
+    background-color: #575757;
+    font-size: xx-large;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: 1s;
+}
+
+#tarefasFeitas:hover {
+    width: auto;
+    height: auto;
+    border-radius: 100px;
+    color: white;
+    background-color: #000000;
+    font-size: xx-large;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#tituloTarefas {
+    margin-bottom: 5%;
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    background-color: rgb(17, 17, 17);
+    border-radius: 100px;
+}
+
+#Contagem {
+    margin-bottom: 12%;
+    font-size: 25px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5%;
+    background-color: #525151;
+    border-radius: 5px;
+}
+
+#Tarefas #Contagem, #tarefasFeitas, #tituloTarefas {
+    display: none;
+}
+
+#Tarefas:hover #Contagem,
+#Tarefas:hover #tarefasFeitas,
+#Tarefas:hover #tituloTarefas {
+    display: block;
+}
