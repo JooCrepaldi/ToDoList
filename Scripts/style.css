@@ -34,10 +34,18 @@ body{
     width: 1%;
     background-color: var(--corsecundaria);
     position: fixed;
+    transition: 1s;
     left: 1%;
+    /* Temporário, deixa a sidebar sem texto até o hover */
+    font-size: 0px;
+    height: 60%;
 }
 
 #Tarefas:hover {
+    transition: 1s;
+    font-size: 20px;
+    height: 40%;
+    color: var(--cortexto);
     width: 30%;
 }
 
@@ -69,3 +77,21 @@ h1 {
     /*margin*/
     margin-left: 20px;
 }
+
+li{
+    list-style: none;
+    flex-grow: 1;
+}
+
+/* checkbox do li */
+.checkbox {
+    height: 20px;
+    width: 20px;
+    background-color: aliceblue;
+    color: #4add4a;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 2px;
+    transition: 1s;
+}
+

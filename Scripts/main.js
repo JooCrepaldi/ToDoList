@@ -7,6 +7,9 @@ var qApagada = document.getElementById("totalApagado");
 
 var qFeita = document.getElementById("totalConcluido");
 
+var normalText = (document.getElementById("regText"));
+var impText = (document.getElementById("impText"));
+var doneText = (document.getElementById("doneText"));
 
 //Função que troca as cores do documento quando ativada
 function color(){
@@ -38,16 +41,12 @@ function addNewLine(){
     var checkbox = document.createElement("button");
     var delButton = document.createElement("button");
     delButton.classList.add("trashCan");
-
-
-    const icon = document.createElement('span');
-    icon.classList.add('material-icons');
-    icon.textContent = 'delete';
-    delButton.appendChild(icon);
+    delButton.textContent = "🗑";
 
     // Botão que exclui a tarefa referente
     delButton.onclick = function(){
         taskList.style.display = "none";
+        counterState(document.getElementById("totalApagado"), 1);
     }
 
     checkbox.classList.add("checkbox");
@@ -55,6 +54,7 @@ function addNewLine(){
        
         if(checkbox.textContent == "✔"){
             checkbox.textContent = '';
+            counterState(document.getElementById("totalConcluido"), -1);
             //  Se a tarefa referente tiver a classe importantTask ela é adicionada na seção de tarefas importantes
             if(taskList.classList.contains("importantTask")){
                 (document.getElementById("importantTaskList")).appendChild(taskList);
@@ -67,6 +67,7 @@ function addNewLine(){
 
         else{
             checkbox.textContent = "✔";
+            counterState(document.getElementById("totalConcluido"), 1);
             (document.getElementById("doneTasks")).appendChild(taskList);
         }
     }
@@ -95,7 +96,7 @@ function addNewLine(){
             (document.getElementById("importantTaskList")).appendChild(taskList);
         }
     }
-
+    counterState(document.getElementById("totalCriado"), 1);
     document.getElementById("input").value = '';
 }
 
@@ -121,7 +122,6 @@ function showDoneTasks(){
     (document.getElementById("importantTaskList")).style.display = "none";
 
     if((document.getElementById("doneTasks")).style.display != "flex"){
-       
         (document.getElementById("doneTasks")).style.display = "flex";
         (document.getElementById("input")).style.display = "none";
         (document.getElementById("botaoadd")).style.display = "none";
@@ -132,13 +132,23 @@ function showDoneTasks(){
         (document.getElementById("botaoadd")).style.display = "block";
         (document.getElementById("doneTasks")).style.display = "none";
         if(whichScreen == 1){
-            
             (document.getElementById("importantTaskList")).style.display = "flex";
         }
         else{
-            
             (document.getElementById("taskList")).style.display = "flex";
         }
     }
 }
 
+function counterState(pointedElement, number){
+    if(number != 0){
+        if((parseInt(pointedElement.innerText) + number) >= 0){
+            pointedElement.innerText = parseInt(pointedElement.innerText) + number;
+        }
+    }
+    else{
+        document.getElementById("totalCriado").innerText = 0;
+        document.getElementById("totalApagado").innerText = 0;
+        document.getElementById("totalConcluido").innerText = 0;
+    }
+}

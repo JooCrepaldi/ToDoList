@@ -45,7 +45,7 @@
                 <p id="totalConcluido">0</p>
             </div>
 
-            <button id="tarefasFeitas" onclick="Tarefinhas()">&nbsp;Tarefas Feitas&nbsp;</button>
+            <button id="tarefasFeitas" onclick="counterState(tituloTarefas, 0)">&nbsp;Tarefas Feitas&nbsp;</button>
         </div>
     </div>
 
@@ -63,17 +63,20 @@
         <div>
             <div>
                 <p>Tarefas</p>
-                <p style="display: none;">Importantes</p>
-                <p style="display: none;">Concluídas</p>
+                <p style="display: none;" id="impText">Importantes</p>
+                <p style="display: none;" id="doneText">Concluídas</p>
 
                 <div id="listaprincipal"><!--espaço da lista-->
                     <ul id="taskList">
+
                     </ul>
 
                     <ul id="importantTaskList" style="display: none;">
+
                     </ul>
 
                     <ul id="doneTasks" style="display: none;">
+
                     </ul>
                 </div>
             </div>
