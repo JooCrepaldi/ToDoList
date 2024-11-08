@@ -12,19 +12,22 @@ var impText = (document.getElementById("impText"));
 var doneText = (document.getElementById("doneText"));
 
 //Função que troca as cores do documento quando ativada
-function color(){
-    if(!(document.getElementById("theme-icon").textContent == "light_mode")){
-        document.getElementById("theme-icon").textContent = "light_mode";
+//function color(){
+    //if(!(document.getElementById("theme-icon").textContent == "light_mode")){
+    //    document.getElementById("theme-icon").textContent = "light_mode";
 
-        (document.body).classList.remove("light_mode");
-        (document.body).classList.toggle("dark_mode");
-    }
-    else{
-        document.getElementById("theme-icon").textContent = "dark_mode";
+    //    (document.body).classList.remove("light_mode");
+     //   (document.body).classList.toggle("dark_mode");
+   // }
+   // else{
+    //    document.getElementById("theme-icon").textContent = "dark_mode";
 
-        (document.body).classList.remove("dark_mode");
-        (document.body).classList.toggle('light_mode');
-    }
+     //   (document.body).classList.remove("dark_mode");
+    //    (document.body).classList.toggle('light_mode');
+   // }
+//}
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
 }
 
 /*Função que irá adicionar uma nova linha conforme  o usuário digitar algo no campo de texto*/

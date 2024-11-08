@@ -5,8 +5,8 @@
     outline: none;
 }
 
-/*ROOT*/
-:root {
+/*Modo Light*/
+/*:root {
     --corfundo: rgba(160, 163, 158, 1);
     --corprincipal: rgba(244, 244, 244, 1);
     --corsecundaria: rgba(227, 227, 227, 1);
@@ -14,27 +14,45 @@
     --corimpactohover: rgb(71, 115, 185);
     --cortexto: rgb(0, 0, 0);
     --cortextoII: rgba(29, 53, 87, 1);
-    /*status*/
+
     --concluido: rgba(42, 157, 143, 1);
     --importante: rgba(157, 42, 65, 1);
     --tarefas: rgba(47, 91, 154, 1);
-
-
-    /*não oficial*/
-    --cortarefas: rgba(121, 137, 139, 0.466);
-    --tarefaspares: rgba(152, 153, 153, 0.466);
+}*/
+:root {
+    --corfundo: linear-gradient(to right bottom, #e3e8ee, #868689);
+    --corprincipal: rgba(240, 240, 235, 1);
+    --corsecundaria: rgba(215, 215, 210, 1);
+    --corimpacto: rgba(95, 145, 200, 1);
+    --corimpactohover: rgba(75, 110, 170, 1);
+    --cortexto: rgba(30, 30, 30, 1);
+    --cortextoII: rgba(70, 90, 120, 1);
+    --concluido: rgba(55, 160, 145, 1);
+    --importante: rgba(165, 60, 80, 1);
+    --tarefas: rgba(80, 115, 180, 1);
 }
 
-/*.dark_mode{
-    
-}*/
 
-/*.light_mode{
-    
-}*/
+
+/*Modo Dark*/
+.dark-mode {
+    --corfundo: rgb(25, 25, 25); linear-gradient(to right bottom, #e3e8ee, #868689);          
+    --corprincipal: rgb(40, 40, 45);      
+    --corsecundaria: rgb(55, 55, 60);    
+    --corimpacto:rgb(71, 115, 185);     
+    --corimpactohover:rgb(105, 152, 229); 
+    --cortexto: rgb(235, 235, 235);        
+    --cortextoII: rgb(180, 180, 190);    
+    /* status (tons ajustados para maior contraste) */
+    --concluido: rgb(77, 199, 181);        
+    --importante: rgb(216, 99, 117);      
+    --tarefas: rgb(88, 137, 201);          
+}
+
+
 
 body {
-    background-color: var(--corfundo);
+    background: var(--corfundo);
     /*flex*/
     display: flex;
     justify-content: center;
@@ -159,7 +177,6 @@ li {
     width: 400px;
     height: 56px;
     background-color: var(--corsecundaria);
-    transition: 1s;
     color: var(--cortexto);
     /*flex*/
     flex-grow: 1;
@@ -199,7 +216,7 @@ li {
 /*-------------------------BOTÕES DO LADO---------------------------*/
 #fundobar {
     background-color: var(--corsecundaria);
-    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 30px 8px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     width: 6%;
     height: 195px;
