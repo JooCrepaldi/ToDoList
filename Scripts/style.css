@@ -18,14 +18,13 @@
 }
 
 /*.dark_mode{
-    quando tiver paleta adicionem aqui
+    
 }*/
 
 /*.light_mode{
-    quando tiver paleta adicionem aqui
+    
 }*/
 
-/*corpo da lista*/
 body{
     background-color: var(--corfundo);
     /*flex*/
@@ -39,19 +38,16 @@ body{
 
 /*sidebar*/
 #Tarefas{
-    /*Breno: alterei apenas as métricas de tamanho*/
     width: 5%;
     height: 45%;
     background-color: var(--corsecundaria);
     position: fixed;
     transition: 1s;
     left: 1%;
-    /* Temporário, deixa a sidebar sem texto até o hover */
     font-size: 0px;
 }
 
 #Tarefas:hover {
-    /*Breno: alterei apenas as métricas de tamanho*/
     transition: 1s;
     font-size: 20px;
     height: 40%;
@@ -61,7 +57,6 @@ body{
 
 /*lista*/
 #fundolista{
-    /*Breno: alterei o width e adicionei componentes básicos como a sombra por tras da lista e seu tamanho*/
     background-color: var(--corprincipal);
     width: 30%;
     box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
@@ -73,12 +68,11 @@ body{
 }
 h1 {
     color: var(--cortexto);
-    flex-grow: 1;/*manda o ícone da lua pro outro lado*/
+    flex-grow: 1;
 }
 
 /*botões do lado*/
 #fundobar{
-    /*Breno: tornei ele com o shape do original, agora é só distanciar os botões, além de trocar as métricas*/
     background-color: var(--corsecundaria);
     border-radius: 25px;
     width: 6%;
