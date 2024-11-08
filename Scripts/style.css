@@ -5,14 +5,20 @@
     outline: none;
 }
 
-/*root*/
+/*ROOT*/
 :root {
     --corfundo: rgba(160, 163, 158, 1);
-    --corprincipal:rgba(244, 244, 244, 1);
-    --corsecundaria:rgba(224, 224, 224, 1);
+    --corprincipal: rgba(244, 244, 244, 1);
+    --corsecundaria:rgba(227, 227, 227, 1);
     --corimpacto: rgba(105, 152, 229, 1);
     --corimpactohover: rgb(71, 115, 185);
     --cortexto: rgb(0, 0, 0);
+    --cortextoII: rgba(29, 53, 87, 1);
+    /*status*/
+    --concluido: rgba(42, 157, 143, 1);
+    --importante:rgba(157, 42, 65, 1);
+    --tarefas:rgba(47, 91, 154, 1);
+    /*não oficial*/
     --cortarefas: rgba(121, 137, 139, 0.466);
     --tarefaspares: rgba(152, 153, 153, 0.466);
 }
@@ -25,7 +31,7 @@
     
 }*/
 
-body{
+body {
     background-color: var(--corfundo);
     /*flex*/
     display: flex;
@@ -36,8 +42,8 @@ body{
     font-family: 'Space Grotesk';
 }
 
-/*sidebar*/
-#Tarefas{
+/*SIDEBAR*/
+#Tarefas {
     width: 5%;
     height: 45%;
     background-color: var(--corsecundaria);
@@ -55,24 +61,93 @@ body{
     width: 30%;
 }
 
-/*lista*/
-#fundolista{
+
+
+
+
+
+
+
+
+/*LISTA*/
+#fundolista {
     background-color: var(--corprincipal);
-    width: 30%;
-    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
-    transition: 1s;
+    width: 35%;
+    padding: 20px 15px 20px 15px;
+    border-radius: 25px;
 }
-#cima{
+
+
+/*cima*/
+#cima {
     display: flex;
     flex-direction: row;
+    margin-bottom: 5px;
 }
+#cima,
 h1 {
-    color: var(--cortexto);
+    color: var(--cortextoII);
+    font-family: "Space Grotesk";
+    font-size: 20px;
+    /*flex*/
     flex-grow: 1;
 }
 
-/*botões do lado*/
-#fundobar{
+/*meio*/
+#status {
+    color: var(--tarefas);/*fabras, aqui vc tem que alternar as cores blz?*/
+    border: var(--tarefas) solid 2px;
+    font-size: 15px;
+    border-radius: 100px;
+    padding: 0px 5px 0px 5px;
+    width: min-content;
+    margin-bottom: 10px;
+}
+#listaprincipal{
+    background-color: var(--corsecundaria);
+    border-radius: 25px;
+    padding: 10px;
+}
+ul{
+    background-color: var(--corprincipal);
+    border-radius: 15px;
+}
+
+
+/*baixo*/
+#baixo {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+#input {
+    border-radius: 15px;
+    padding-left: 20px;
+    width: 400px;
+    height: 56px;
+    background-color: var(--corsecundaria);
+    transition: 1s;
+    color: var(--cortexto);
+}
+#botaoadd {
+    font-size: 20px;
+    border-radius: 15px;
+    width: 56px;
+    height: 56px;
+    background-color: var(--corimpacto);
+}
+
+
+
+
+
+
+
+
+
+/*BOTÕES DO LADO*/
+#fundobar {
     background-color: var(--corsecundaria);
     border-radius: 25px;
     width: 6%;
@@ -87,12 +162,12 @@ h1 {
     margin-left: 20px;
 }
 
-li{
+li {
     list-style: none;
     flex-grow: 1;
 }
 
-/* checkbox do li */
+/*CHECKBOX DO LI*/
 .checkbox {
     height: 20px;
     width: 20px;
@@ -103,4 +178,3 @@ li{
     border-radius: 2px;
     transition: 1s;
 }
-
