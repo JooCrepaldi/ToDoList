@@ -156,8 +156,12 @@ li {
     color: var(--cortexto);
     list-style: none;
     border-radius: 15px;
+    white-space: pre-line;
+    position: relative;
+    transition: 1s;
     /*flex*/
     display: flex;
+    flex-grow: 1;
     align-items: center;
 }
 
@@ -235,6 +239,13 @@ li {
 #botaoadd:hover {
     background-color: var(--corimpactohover);
     transition: 0.4s;
+}
+/* Eu criei um signal que diz se a tarefa é importante ou normal, ficou legalzinho */
+#signal{
+    margin: 5px;
+    right: 0;
+    position: absolute;
+    transition: 1s;
 }
 
 ::placeholder {

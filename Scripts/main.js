@@ -47,8 +47,9 @@ function addNewLine() {
     descBar.textContent = "description";
     descBar.onclick = function (){
     
-        if(descBar.textContent == "description"){
+        if(descBar.textContent == "description" && (document.getElementById("input")).style.display != "none"){
             descBar.textContent = " description ";
+            taskList.appendChild(document.createElement("p"));
             var descText = document.createElement("input");
             descText.placeholder = "adicionar descrição...";
             descText.id = "descInput";
@@ -74,6 +75,7 @@ function addNewLine() {
             addDesc.textContent = "+";
 
             taskList.appendChild(addDesc);
+            
 
             addDesc.onclick = function(){
                 if((descText.value).trim() != ''){
@@ -82,6 +84,7 @@ function addNewLine() {
                     descList.textContent = "Descrição: " + descText.value;
                     descList.style.display = "block";
                     taskList.appendChild(descList);
+                    taskList.appendChild(document.createElement('br'));
     
                     descList.value = '';
                     descText.style.display = "none";
@@ -148,12 +151,19 @@ function addNewLine() {
         taskList.appendChild(document.createTextNode(inputValue));
         taskList.appendChild(descBar);
         taskList.appendChild(delButton);
+        var signal = document.createElement("span");
+        signal.id = "signal";
+        signal.classList.add("material-icons");
+        signal.textContent = "radio_button_checked";
+        
+
         if (whichScreen == 0) {
             evenOrOdd++;
             if (evenOrOdd % 2 == 0) {
                 // Tarefas pares e ímpares inativadas por agora
             }
             (document.getElementById("taskList")).appendChild(taskList);
+            signal.style.color = "var(--tarefas)";
 
         }
         else {
@@ -162,18 +172,23 @@ function addNewLine() {
             if (evenOrOdd2 % 2 == 0) {
                 
             }
+            
             (document.getElementById("importantTaskList")).appendChild(taskList);
+            signal.style.color = "var(--importante)";
+
         }
     }
 
 
 
-
+    taskList.appendChild(signal);
+    
     counterState(document.getElementById("totalCriado"), 1);
     document.getElementById("input").value = '';
 }
 
 function switchScreen() {
+    
     document.getElementById("input").value = '';
     (document.getElementById("input")).style.display = "block";
     (document.getElementById("botaoadd")).style.display = "block";
@@ -182,6 +197,7 @@ function switchScreen() {
         // Mudando a cor para a de tarefas importantes
         (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--importante');
         (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--importante');
+        (document.getElementById("textTarefas")).textContent = "Importantes";
         (document.getElementById("importantTaskList")).style.display = "flex";
         (document.getElementById("taskList")).style.display = "none";
         whichScreen = 1;
@@ -189,11 +205,12 @@ function switchScreen() {
     else {
         (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--tarefas');
         (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--tarefas');
-
+        (document.getElementById("textTarefas")).textContent = "Tarefas";
         (document.getElementById("importantTaskList")).style.display = "none";
         (document.getElementById("taskList")).style.display = "flex";
         whichScreen = 0;
     }
+    (document.getElementById("showDoneButton")).textContent = "check_circle";
     (document.getElementById("doneTasks")).style.display = "none";
 }
 
@@ -203,21 +220,21 @@ function showDoneTasks() {
     (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--concluido');
     (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--concluido');
 
+
     (document.getElementById("taskList")).style.display = "none";
     (document.getElementById("importantTaskList")).style.display = "none";
 
-    if ((document.getElementById("doneTasks")).style.display != "block"){
+    if ((document.getElementById("doneTasks")).style.display != "flex"){
 
         (document.getElementById("showDoneButton")).textContent = "view_list";
-
-        (document.getElementById("doneTasks")).style.display = "block";
+        (document.getElementById("textTarefas")).textContent = "Concluídas";
+        (document.getElementById("doneTasks")).style.display = "flex";
         (document.getElementById("input")).style.display = "none";
         (document.getElementById("botaoadd")).style.display = "none";
     }
     else {
 
         (document.getElementById("showDoneButton")).textContent = "check_circle";
-        
         (document.getElementById("input")).style.display = "block";
         (document.getElementById("botaoadd")).style.display = "block";
         (document.getElementById("doneTasks")).style.display = "none";
@@ -225,14 +242,14 @@ function showDoneTasks() {
 
             (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--importante');
             (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--importante');
-
+            (document.getElementById("textTarefas")).textContent = "Importantes";
             (document.getElementById("importantTaskList")).style.display = "flex";
         }
         else {
 
             (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--tarefas');
             (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--tarefas');
-
+            (document.getElementById("textTarefas")).textContent = "Tarefas";
             (document.getElementById("taskList")).style.display = "flex";
         }
     }
