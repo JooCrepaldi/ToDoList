@@ -92,6 +92,20 @@ body {
     transition: 1s;
 }
 
+#tarefasFeitas{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--corimpacto);
+    border-radius: 20px;
+
+    transition: 0.5s;
+}
+
+#tarefasFeitas:hover{
+    background-color: var(--corimpactohover);
+    transition: 0.5s;
+}
+
 /*--icone--*/
 #seta{
     color: var(--cortextoII);
