@@ -32,7 +32,7 @@
     /* status (tons ajustados para maior contraste) */
     --concluido: rgb(77, 199, 181);        
     --importante: rgb(216, 99, 117);      
-    --tarefas: rgba(80, 115, 180, 1);        
+    --tarefas: rgba(80, 115, 180, 1);  
 }
 
 
@@ -126,7 +126,6 @@ h1 {
 /*-----meio-----*/
 #status {
     color: var(--tarefas);
-    /*fabras, aqui vc tem que alternar as cores blz?*/
     border: var(--tarefas) solid 2px;
     font-size: 15px;
     border-radius: 100px;
@@ -187,8 +186,9 @@ li {
 #descInput{
     border-radius: 15px;
     padding-left: 20px;
+    font-size: medium;
     width: 60%;
-    height: 40%;
+    height: 60%;
     background-color: var(--corsecundaria);
     color: var(--cortexto);
     /*flex*/
