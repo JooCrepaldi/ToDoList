@@ -32,7 +32,7 @@
     /* status (tons ajustados para maior contraste) */
     --concluido: rgb(77, 199, 181);        
     --importante: rgb(216, 99, 117);      
-    --tarefas: rgb(88, 137, 201);          
+    --tarefas: rgb(3, 105, 238);          
 }
 
 
@@ -101,7 +101,6 @@ h1 {
     flex-grow: 1;
     transition: 1s;
 }
-/* li das descrições */
 
 
 #trocatema {
@@ -128,6 +127,8 @@ h1 {
 #status {
     color: var(--tarefas);
     /*fabras, aqui vc tem que alternar as cores blz?*/
+    /* tendi nada */
+    /* Não faço ideia do que você quer dizer */
     border: var(--tarefas) solid 2px;
     font-size: 15px;
     border-radius: 100px;
@@ -152,8 +153,11 @@ ul {
     transition: 1s;
 }
 
+
 li {
     list-style: none;
+    padding: 5px;
+    font-size: large;
     color: var(--cortexto);
     transition: 1s;
 }
@@ -177,6 +181,44 @@ li {
     /*flex*/
     flex-grow: 1;
     transition: 1s;
+}
+/* não pretende ser provisório. input das descrições */
+/* As cores que eu usei são provisórias, já que eu não sei o que vocês querem no CSS */
+#descInput{
+    border-radius: 15px;
+    padding-left: 20px;
+    width: 60%;
+    height: 40%;
+    background-color: var(--corsecundaria);
+    color: var(--cortexto);
+    /*flex*/
+    flex-grow: 1;
+    transition: 1s;
+}
+
+/* não pretende ser provisório. botão das descrições */
+/* As cores que eu usei são provisórias, já que eu não sei o que vocês querem no CSS */
+#addDesc{
+    border-radius: 2px;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    font-size: 24px;
+    margin: 5px;
+    transition: 0.5s;
+    background-color: var(--corimpactohover);
+    color: black;
+    transition: 1s;
+}
+
+#addDesc:hover{
+    color: rgb(255, 224, 122);
+}
+
+#addDesc:active{
+    background-color: var(--corimpacto);
+    color: rgb(255, 255, 255);
+    transition: 0.1s;
 }
 
 #botaoadd {
@@ -202,8 +244,8 @@ li {
 
 /*CHECKBOX DO LI*/
 .checkbox {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     background-color: rgb(179, 179, 179);
     color: #4add4a;
     font-size: 18px;
@@ -212,6 +254,25 @@ li {
     transition: 1s;
 }
 
+.trashCan {
+    border-radius: 2px;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    font-size: 18px;
+    margin: 5px;
+    transition: 0.5s;
+    background-color: aliceblue;
+    color: red;
+    transition: 1s;
+}
+
+.trashCan:hover {
+    background-color: red;
+    color: white;
+    
+    transition: 1s;
+}
 
 /*-------------------------BOTÕES DO LADO---------------------------*/
 #fundobar {

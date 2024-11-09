@@ -54,13 +54,16 @@ function addNewLine() {
     // Texto da descrição
     var descList = document.createElement("text");
 
-    descBar.classList.add("checkbox");
+    descBar.classList.add("addDesc");
+    descBar.id = "addDesc";
     descBar.textContent = "📋";
     descBar.onclick = function (){
        
         if(descBar.textContent == "📋"){
             descBar.textContent = " 📋 ";
             var descText = document.createElement("input");
+            descText.id = "descInput";
+            descText.classList.add("descInput");
             taskList.appendChild(descText);
 
             var descDel = document.createElement("button");
@@ -78,6 +81,7 @@ function addNewLine() {
             taskList.appendChild(descDel);
 
             var addDesc = document.createElement("button");
+            addDesc.classList.add("checkbox");
             addDesc.textContent = "+";
 
             taskList.appendChild(addDesc);
@@ -111,7 +115,6 @@ function addNewLine() {
         }
     }
             
- 
 
     
     delButton.classList.add("trashCan");
@@ -183,13 +186,13 @@ function switchScreen() {
     (document.getElementById("input")).style.display = "block";
     (document.getElementById("botaoadd")).style.display = "block";
     if (whichScreen == 0) {
-        (document.getElementById("importantTaskList")).style.display = "flex";
+        (document.getElementById("importantTaskList")).style.display = "block";
         (document.getElementById("taskList")).style.display = "none";
         whichScreen = 1;
     }
     else {
         (document.getElementById("importantTaskList")).style.display = "none";
-        (document.getElementById("taskList")).style.display = "flex";
+        (document.getElementById("taskList")).style.display = "block";
         whichScreen = 0;
     }
     (document.getElementById("doneTasks")).style.display = "none";
@@ -199,8 +202,8 @@ function showDoneTasks() {
     (document.getElementById("taskList")).style.display = "none";
     (document.getElementById("importantTaskList")).style.display = "none";
 
-    if ((document.getElementById("doneTasks")).style.display != "flex") {
-        (document.getElementById("doneTasks")).style.display = "flex";
+    if ((document.getElementById("doneTasks")).style.display != "block") {
+        (document.getElementById("doneTasks")).style.display = "block";
         (document.getElementById("input")).style.display = "none";
         (document.getElementById("botaoadd")).style.display = "none";
     }
@@ -230,42 +233,3 @@ function counterState(pointedElement, number) {
         document.getElementById("totalConcluido").innerText = 0;
     }
 }
-
-// Criando a função disable/enable description
-
-// function enableDescription(){
-    
-//     if((document.getElementById("descButton")).textContent == "📋"){
-        
-//         var descText = document.createElement("input");
-//         taskList.appendChild(descText);
-//         var addDesc = document.createElement("button");
-//         addDesc.textContent = "+";
-//         taskList.appendChild(addDesc);
-//         addDesc.onclick = function(){
-//             if((descText.value).trim() != ''){
-//                 var descList = document.createElement("text");
-//                 descList.id = "descList";
-//                 descList.classList.add("descLi");
-//                 descList.textContent = "Descrição da tarefa: '" + taskList.textContent + "'\n" + descText.value;
-
-//                 taskList.appendChild(descList);
-
-//                 descList.value = '';
-//                 descText.style.display = "none";
-//                 addDesc.style.display = "none";
-//                 (document.getElementById("descButton")).textContent = "(-)";
-//             }
-//         }
-//     }
-//     else if((document.getElementById("descButton")).textContent == "(-)"){
-//         (document.getElementById("descButton")).textContent = "(+)";
-//         document.getElementById("descList").style.display = "none";
-        
-//     }
-//     else if((document.getElementById("descButton")).textContent == "(+)"){
-//         (document.getElementById("descButton")).textContent = "(-)";
-//         document.getElementById("descList").style.display = "flex";
-        
-//     }
-// }
