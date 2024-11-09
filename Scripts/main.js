@@ -12,6 +12,10 @@ var normalText = (document.getElementById("regText"));
 var impText = (document.getElementById("impText"));
 var doneText = (document.getElementById("doneText"));
 
+// Aprendi fazendo. Essa seção está pegando o 'root:' do CSS e o tornando variável do JavaScript
+// Esta variável está mudando o valor de acordo com o código sendo rodado.
+const rootStyles = getComputedStyle(document.documentElement);
+
 //Função que troca as cores do documento quando ativada
 //function color(){
 //if(!(document.getElementById("theme-icon").textContent == "light_mode")){
@@ -31,7 +35,7 @@ var doneText = (document.getElementById("doneText"));
 
 
 function toggleDarkMode() {
-document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('dark-mode');
 }
 
 
@@ -58,7 +62,7 @@ function addNewLine() {
     descBar.id = "addDesc";
     descBar.textContent = "📋";
     descBar.onclick = function (){
-       
+       // Eu não sei a fonte dos botões que tu pega, mas tenta achar uma para o descrições também, por favor!
         if(descBar.textContent == "📋"){
             descBar.textContent = " 📋 ";
             var descText = document.createElement("input");
@@ -118,8 +122,15 @@ function addNewLine() {
     //---seu código original---
     //delButton.classList.add("trashCan"); delButton.textContent = "🗑"; delButton.onclick = function(){ taskList.style.display = "none"; counterState(document.getElementById("totalApagado"), 1); }
 
-//fabras eu tive que fazer isso para ver se ia o ícone... mas agora tá funcionando!!    
-    var delButton = document.createElement("button"); delButton.classList.add("trashCan", "material-icons"); delButton.textContent = "delete";
+//fabras eu tive que fazer isso para ver se ia o ícone... mas agora tá funcionando!! 
+// crepas, dessa vez ficou realmente muito bom, meu parabas!   
+    var delButton = document.createElement("button"); 
+    delButton.classList.add("trashCan", "material-icons");
+    delButton.textContent = "delete";
+    delButton.onclick = function(){
+        taskList.style.display = "none";
+        counterState(document.getElementById("totalApagado"), 1);
+    }
     checkbox.classList.add("checkbox");
     checkbox.onclick = function(){
        
@@ -182,11 +193,18 @@ function switchScreen() {
     (document.getElementById("input")).style.display = "block";
     (document.getElementById("botaoadd")).style.display = "block";
     if (whichScreen == 0) {
+
+        // Mudando a cor para a de tarefas importantes
+        (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--importante');
+        (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--importante');
         (document.getElementById("importantTaskList")).style.display = "block";
         (document.getElementById("taskList")).style.display = "none";
         whichScreen = 1;
     }
     else {
+        (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--tarefas');
+        (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--tarefas');
+
         (document.getElementById("importantTaskList")).style.display = "none";
         (document.getElementById("taskList")).style.display = "block";
         whichScreen = 0;
@@ -195,10 +213,16 @@ function switchScreen() {
 }
 
 function showDoneTasks() {
+
+    (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--concluido');
+    (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--concluido');
+
     (document.getElementById("taskList")).style.display = "none";
     (document.getElementById("importantTaskList")).style.display = "none";
 
-    if ((document.getElementById("doneTasks")).style.display != "block") {
+    if ((document.getElementById("doneTasks")).style.display != "block"){
+
+
         (document.getElementById("doneTasks")).style.display = "block";
         (document.getElementById("input")).style.display = "none";
         (document.getElementById("botaoadd")).style.display = "none";
@@ -209,9 +233,17 @@ function showDoneTasks() {
         (document.getElementById("botaoadd")).style.display = "block";
         (document.getElementById("doneTasks")).style.display = "none";
         if (whichScreen == 1) {
+
+            (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--importante');
+            (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--importante');
+
             (document.getElementById("importantTaskList")).style.display = "flex";
         }
         else {
+
+            (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--tarefas');
+            (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--tarefas');
+
             (document.getElementById("taskList")).style.display = "flex";
         }
     }
