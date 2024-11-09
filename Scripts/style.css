@@ -32,7 +32,7 @@
     /* status (tons ajustados para maior contraste) */
     --concluido: rgb(77, 199, 181);        
     --importante: rgb(216, 99, 117);      
-    --tarefas: rgb(3, 105, 238);          
+    --tarefas: rgba(80, 115, 180, 1);        
 }
 
 
@@ -127,8 +127,6 @@ h1 {
 #status {
     color: var(--tarefas);
     /*fabras, aqui vc tem que alternar as cores blz?*/
-    /* tendi nada */
-    /* Não faço ideia do que você quer dizer */
     border: var(--tarefas) solid 2px;
     font-size: 15px;
     border-radius: 100px;
@@ -151,13 +149,14 @@ ul {
     background-color: var(--corprincipal);
     border-radius: 15px;
     transition: 1s;
+    /*flex*/
+    display: flex;
+    flex-direction: column;
 }
 
 
 li {
     list-style: none;
-    padding: 5px;
-    font-size: large;
     color: var(--cortexto);
     transition: 1s;
 }
