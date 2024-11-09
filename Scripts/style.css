@@ -33,10 +33,9 @@
 }
 
 
-
 /*Modo Dark*/
 .dark-mode {
-    --corfundo: rgb(25, 25, 25); linear-gradient(to right bottom, #e3e8ee, #868689);          
+    --corfundo: linear-gradient(to right bottom, #272929, #151517);          
     --corprincipal: rgb(40, 40, 45);      
     --corsecundaria: rgb(55, 55, 60);    
     --corimpacto:rgb(71, 115, 185);     
@@ -48,7 +47,6 @@
     --importante: rgb(216, 99, 117);      
     --tarefas: rgb(88, 137, 201);          
 }
-
 
 
 body {
@@ -161,6 +159,7 @@ ul {
 
 li {
     list-style: none;
+    color: var(--cortexto);
 }
 
 /*------baixo------*/
