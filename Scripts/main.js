@@ -1,6 +1,7 @@
 var whichScreen = 0;
 var evenOrOdd = 0;
 var evenOrOdd2 = 0;
+
 var qCriada = document.getElementById("totalCriado");
 
 var qApagada = document.getElementById("totalApagado");
@@ -39,11 +40,75 @@ function addNewLine(){
 
     //checkbox funcionando como  um botão para adicionar a tarefa na lista de tarefas concluídas
     var checkbox = document.createElement("button");
+    // Botão que exclui a tarefa referente
     var delButton = document.createElement("button");
+    // Botão que adiciona descrições às tarefas
+    var descBar = document.createElement("button");
+    // Texto da descrição
+    var descList = document.createElement("text");
+
+    descBar.classList.add("checkbox");
+    descBar.textContent = "📋";
+    descBar.onclick = function (){
+       
+        if(descBar.textContent == "📋"){
+            descBar.textContent = " 📋 ";
+            var descText = document.createElement("input");
+            taskList.appendChild(descText);
+
+            var descDel = document.createElement("button");
+            descDel.classList.add("trashCan");
+            descDel.textContent = "X";
+            descDel.onclick = function(){
+                descDel.style.display = "none";
+                descBar.textContent = "📋";
+                descList.value = '';
+                descText.style.display = "none";
+                descList.style.display = "none";
+                addDesc.style.display = "none";
+                
+            }
+            taskList.appendChild(descDel);
+
+            var addDesc = document.createElement("button");
+            addDesc.textContent = "+";
+
+            taskList.appendChild(addDesc);
+
+            addDesc.onclick = function(){
+                if((descText.value).trim() != ''){
+                    
+                    descList.classList.add("descLi");
+                    descList.textContent = "Descrição: " + descText.value;
+                    descList.style.display = "block";
+                    taskList.appendChild(descList);
+    
+                    descList.value = '';
+                    descText.style.display = "none";
+                    addDesc.style.display = "none";
+                    descBar.textContent = "(-)";
+                }
+            }
+        }
+        else if(descBar.textContent == "(-)"){
+
+            descBar.textContent = "(+)";
+            descList.style.display = "none";
+                        
+        }
+        else if(descBar.textContent == "(+)"){
+            
+                descBar.textContent = "(-)";
+                descList.style.display = "block";
+                 
+        }
+    }
+            
+ 
+
+    
     delButton.classList.add("trashCan");
     delButton.textContent = "🗑";
-
-    // Botão que exclui a tarefa referente
     delButton.onclick = function(){
         taskList.style.display = "none";
         counterState(document.getElementById("totalApagado"), 1);
@@ -51,7 +116,8 @@ function addNewLine(){
 
     checkbox.classList.add("checkbox");
     checkbox.onclick = function(){
-       
+   
+    
         if(checkbox.textContent == "✔"){
             checkbox.textContent = '';
             counterState(document.getElementById("totalConcluido"), -1);
@@ -72,12 +138,14 @@ function addNewLine(){
         }
     }
 
+    
     //se o valor do input for diferente de um espaço em branco, vai adicionar uma linha, com uma checkbox  e o texto do input
     if(inputValue.trim() != ''){
         
         taskList = document.createElement("li");
         taskList.appendChild(checkbox);
         taskList.appendChild(document.createTextNode(inputValue));
+        taskList.appendChild(descBar);
         taskList.appendChild(delButton);
         if(whichScreen == 0){
             evenOrOdd++;
@@ -96,6 +164,10 @@ function addNewLine(){
             (document.getElementById("importantTaskList")).appendChild(taskList);
         }
     }
+
+
+
+
     counterState(document.getElementById("totalCriado"), 1);
     document.getElementById("input").value = '';
 }
@@ -152,3 +224,42 @@ function counterState(pointedElement, number){
         document.getElementById("totalConcluido").innerText = 0;
     }
 }
+
+// Criando a função disable/enable description
+
+// function enableDescription(){
+    
+//     if((document.getElementById("descButton")).textContent == "📋"){
+        
+//         var descText = document.createElement("input");
+//         taskList.appendChild(descText);
+//         var addDesc = document.createElement("button");
+//         addDesc.textContent = "+";
+//         taskList.appendChild(addDesc);
+//         addDesc.onclick = function(){
+//             if((descText.value).trim() != ''){
+//                 var descList = document.createElement("text");
+//                 descList.id = "descList";
+//                 descList.classList.add("descLi");
+//                 descList.textContent = "Descrição da tarefa: '" + taskList.textContent + "'\n" + descText.value;
+
+//                 taskList.appendChild(descList);
+
+//                 descList.value = '';
+//                 descText.style.display = "none";
+//                 addDesc.style.display = "none";
+//                 (document.getElementById("descButton")).textContent = "(-)";
+//             }
+//         }
+//     }
+//     else if((document.getElementById("descButton")).textContent == "(-)"){
+//         (document.getElementById("descButton")).textContent = "(+)";
+//         document.getElementById("descList").style.display = "none";
+        
+//     }
+//     else if((document.getElementById("descButton")).textContent == "(+)"){
+//         (document.getElementById("descButton")).textContent = "(-)";
+//         document.getElementById("descList").style.display = "flex";
+        
+//     }
+// }

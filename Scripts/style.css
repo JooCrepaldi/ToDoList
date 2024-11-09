@@ -97,6 +97,8 @@ li{
     list-style: none;
     flex-grow: 1;
 }
+/* li das descrições */
+
 
 /* checkbox do li */
 .checkbox {
