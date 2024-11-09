@@ -259,14 +259,14 @@ li {
     width: 56px;
     height: 56px;
     background-color: var(--corimpacto);
-    transition: 0.4s;
+    transition: 0.5s;
     cursor: pointer;
 }
 
 #botaoadd:hover {
     background-color: var(--corimpactohover);
     border-radius:100%;
-    transition: 0.4s;
+    transition: 0.5s;
 }
 
 /*----sinal----*/
