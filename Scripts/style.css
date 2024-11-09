@@ -243,7 +243,7 @@ li {
 /* Eu criei um signal que diz se a tarefa é importante ou normal, ficou legalzinho */
 #signal{
     margin: 5px;
-    right: 0;
+    right: 0%;
     position: absolute;
     transition: 1s;
 }
@@ -281,7 +281,6 @@ li {
 .trashCan:hover {
     background-color: red;
     color: white;
-    
     transition: 1s;
 }
 
