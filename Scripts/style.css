@@ -191,7 +191,7 @@ li {
     border-radius: 15px;
     padding-left: 20px;
     font-size: medium;
-    width: 60%;
+    width: 30%;
     height: 60%;
     background-color: var(--corsecundaria);
     color: var(--cortexto);
@@ -213,7 +213,6 @@ li {
 }
 
 #addDesc:active{
-    background-color: var(--corimpacto);
     color: rgb(255, 255, 255);
     transition: 0.1s;
 }
@@ -256,12 +255,21 @@ li {
     color: #4add4a;
     margin: 5px;
     border-radius: 100px;
-    transition: 1s;
+    transition: 0.5s;
+}
+
+.checkbox:hover{
+    border-color: var(--concluido);
+}
+
+.checkbox:active{
+    border-color: var(--tarefas);
+    transition: 0.1s;
 }
 
 /*lixeira*/
 .trashCan {
-    font-size: 250px;
+    font-size: 23px;
     margin: 5px;
     background: none;
     color:#868689;

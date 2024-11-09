@@ -182,7 +182,6 @@ function addNewLine() {
     }
 
 
-
     taskList.appendChild(signal);
     
     counterState(document.getElementById("totalCriado"), 1);
