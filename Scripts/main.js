@@ -2,40 +2,24 @@ var whichScreen = 0;
 var evenOrOdd = 0;
 var evenOrOdd2 = 0;
 
-var qCriada = document.getElementById("totalCriado");
 
-var qApagada = document.getElementById("totalApagado");
 
-var qFeita = document.getElementById("totalConcluido");
-
-var normalText = (document.getElementById("regText"));
-var impText = (document.getElementById("impText"));
-var doneText = (document.getElementById("doneText"));
 
 // Aprendi fazendo. Essa seção está pegando o 'root:' do CSS e o tornando variável do JavaScript
 // Esta variável está mudando o valor de acordo com o código sendo rodado.
 const rootStyles = getComputedStyle(document.documentElement);
 
-//Função que troca as cores do documento quando ativada
-//function color(){
-//if(!(document.getElementById("theme-icon").textContent == "light_mode")){
-//    document.getElementById("theme-icon").textContent = "light_mode";
-
-//    (document.body).classList.remove("light_mode");
-//   (document.body).classList.toggle("dark_mode");
-// }
-// else{
-//    document.getElementById("theme-icon").textContent = "dark_mode";
-
-//   (document.body).classList.remove("dark_mode");
-//    (document.body).classList.toggle('light_mode');
-// }
-//}
-
-
 
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
+    if((document.getElementById("theme-icon")).textContent != "light_mode"){
+        (document.getElementById("theme-icon")).style.color = "rgb(255, 224, 122)";
+        (document.getElementById("theme-icon")).textContent = "light_mode";
+    }
+    else{
+        (document.getElementById("theme-icon")).textContent = "dark_mode";
+        (document.getElementById("theme-icon")).style.color = "var(--cortextoII)";
+    }
 }
 
 
@@ -58,14 +42,15 @@ function addNewLine() {
     // Texto da descrição
     var descList = document.createElement("text");
 
-    descBar.classList.add("addDesc");
+    descBar.classList.add("addDesc", "material-icons");
     descBar.id = "addDesc";
-    descBar.textContent = "📋";
+    descBar.textContent = "description";
     descBar.onclick = function (){
-       // Eu não sei a fonte dos botões que tu pega, mas tenta achar uma para o descrições também, por favor!
-        if(descBar.textContent == "📋"){
-            descBar.textContent = " 📋 ";
+    
+        if(descBar.textContent == "description"){
+            descBar.textContent = " description ";
             var descText = document.createElement("input");
+            descText.placeholder = "adicionar descrição...";
             descText.id = "descInput";
             descText.classList.add("descInput");
             taskList.appendChild(descText);
@@ -75,7 +60,7 @@ function addNewLine() {
             descDel.textContent = "X";
             descDel.onclick = function(){
                 descDel.style.display = "none";
-                descBar.textContent = "📋";
+                descBar.textContent = "description";
                 descList.value = '';
                 descText.style.display = "none";
                 descList.style.display = "none";
@@ -101,19 +86,19 @@ function addNewLine() {
                     descList.value = '';
                     descText.style.display = "none";
                     addDesc.style.display = "none";
-                    descBar.textContent = "(-)";
+                    descBar.textContent = "visibility_off";
                 }
             }
         }
-        else if(descBar.textContent == "(-)"){
+        else if(descBar.textContent == "visibility_off"){
 
-            descBar.textContent = "(+)";
+            descBar.textContent = "visibility";
             descList.style.display = "none";
                         
         }
-        else if(descBar.textContent == "(+)"){
+        else if(descBar.textContent == "visibility"){
             
-                descBar.textContent = "(-)";
+                descBar.textContent = "visibility_off";
                 descList.style.display = "block";
                  
         }
@@ -166,7 +151,7 @@ function addNewLine() {
         if (whichScreen == 0) {
             evenOrOdd++;
             if (evenOrOdd % 2 == 0) {
-                taskList.classList.add("evenTask");
+                // Tarefas pares e ímpares inativadas por agora
             }
             (document.getElementById("taskList")).appendChild(taskList);
 
@@ -175,7 +160,7 @@ function addNewLine() {
             evenOrOdd2++;
             taskList.classList.add("importantTask");
             if (evenOrOdd2 % 2 == 0) {
-                taskList.style.backgroundColor = "#979797"
+                
             }
             (document.getElementById("importantTaskList")).appendChild(taskList);
         }
@@ -197,7 +182,7 @@ function switchScreen() {
         // Mudando a cor para a de tarefas importantes
         (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--importante');
         (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--importante');
-        (document.getElementById("importantTaskList")).style.display = "block";
+        (document.getElementById("importantTaskList")).style.display = "flex";
         (document.getElementById("taskList")).style.display = "none";
         whichScreen = 1;
     }
@@ -206,7 +191,7 @@ function switchScreen() {
         (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--tarefas');
 
         (document.getElementById("importantTaskList")).style.display = "none";
-        (document.getElementById("taskList")).style.display = "block";
+        (document.getElementById("taskList")).style.display = "flex";
         whichScreen = 0;
     }
     (document.getElementById("doneTasks")).style.display = "none";
