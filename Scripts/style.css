@@ -72,7 +72,7 @@ body {
     font-size: 20px;
     height: 40%;
     color: var(--cortexto);
-    width: 30%;
+    width: 25%;
 }
 
 #Tarefas #tarefasFeitas {
@@ -198,7 +198,6 @@ li {
     transition: 1s;
     /*flex*/
     display: flex;
-    flex-grow: 1;
     align-items: center;
 }
 
