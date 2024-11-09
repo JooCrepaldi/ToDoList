@@ -246,11 +246,12 @@ li {
 .checkbox {
     height: 30px;
     width: 30px;
-    background-color: rgb(179, 179, 179);
+    border: solid var(--cortextoII) 4px;
+    background: none;
     color: #4add4a;
     font-size: 18px;
     margin: 5px;
-    border-radius: 2px;
+    border-radius: 100px;
     transition: 1s;
 }
 
