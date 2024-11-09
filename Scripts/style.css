@@ -146,7 +146,7 @@ h1 {
 
 
 ul{
-    /*flex --------- CONSERTAR a largura*/
+    /*flex --------- CONSERTAR a largura    */
     display: flex;
     flex-direction: column;
     gap: 10px;
