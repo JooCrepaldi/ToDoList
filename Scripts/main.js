@@ -13,7 +13,7 @@ const rootStyles = getComputedStyle(document.documentElement);
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     if((document.getElementById("theme-icon")).textContent != "light_mode"){
-        (document.getElementById("theme-icon")).style.color = "rgb(255, 224, 122)";
+        (document.getElementById("theme-icon")).style.color = "var(--cortextoI)";
         (document.getElementById("theme-icon")).textContent = "light_mode";
     }
     else{
@@ -199,6 +199,7 @@ function switchScreen() {
 
 function showDoneTasks() {
 
+
     (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--concluido');
     (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--concluido');
 
@@ -207,6 +208,7 @@ function showDoneTasks() {
 
     if ((document.getElementById("doneTasks")).style.display != "block"){
 
+        (document.getElementById("showDoneButton")).textContent = "view_list";
 
         (document.getElementById("doneTasks")).style.display = "block";
         (document.getElementById("input")).style.display = "none";
@@ -214,6 +216,8 @@ function showDoneTasks() {
     }
     else {
 
+        (document.getElementById("showDoneButton")).textContent = "check_circle";
+        
         (document.getElementById("input")).style.display = "block";
         (document.getElementById("botaoadd")).style.display = "block";
         (document.getElementById("doneTasks")).style.display = "none";
