@@ -5,20 +5,7 @@
     outline: none;
 }
 
-/*Modo Light*/
-/*:root {
-    --corfundo: rgba(160, 163, 158, 1);
-    --corprincipal: rgba(244, 244, 244, 1);
-    --corsecundaria: rgba(227, 227, 227, 1);
-    --corimpacto: rgba(105, 152, 229, 1);
-    --corimpactohover: rgb(71, 115, 185);
-    --cortexto: rgb(0, 0, 0);
-    --cortextoII: rgba(29, 53, 87, 1);
 
-    --concluido: rgba(42, 157, 143, 1);
-    --importante: rgba(157, 42, 65, 1);
-    --tarefas: rgba(47, 91, 154, 1);
-}*/
 :root {
     --corfundo: linear-gradient(to right bottom, #e3e8ee, #868689);
     --corprincipal: rgba(240, 240, 235, 1);
