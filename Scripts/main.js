@@ -42,13 +42,13 @@ function addNewLine() {
     // Texto da descrição
     var descList = document.createElement("text");
 
-    descBar.classList.add("addDesc", "material-icons");
+    descBar.classList.add("addDesc", "material-symbols-outlined");
     descBar.id = "addDesc";
-    descBar.textContent = "description";
+    descBar.textContent = "add_notes";
     descBar.onclick = function (){
     
-        if(descBar.textContent == "description" && (document.getElementById("input")).style.display != "none"){
-            descBar.textContent = " description ";
+        if(descBar.textContent == "add_notes" && (document.getElementById("input")).style.display != "none"){
+            descBar.textContent = " add_notes ";
             taskList.appendChild(document.createElement("p"));
             var descText = document.createElement("input");
             descText.placeholder = "adicionar descrição...";
@@ -62,7 +62,7 @@ function addNewLine() {
             descDel.textContent = "X";
             descDel.onclick = function(){
                 descDel.style.display = "none";
-                descBar.textContent = "description";
+                descBar.textContent = "add_notes";
                 descList.value = '';
                 descText.style.display = "none";
                 descList.style.display = "none";
@@ -115,7 +115,7 @@ function addNewLine() {
 //fabras eu tive que fazer isso para ver se ia o ícone... mas agora tá funcionando!! 
 // crepas, dessa vez ficou realmente muito bom, meu parabas!   
     var delButton = document.createElement("button"); 
-    delButton.classList.add("trashCan", "material-icons");
+    delButton.classList.add("trashCan", "material-symbols-outlined");
     delButton.textContent = "delete";
     delButton.onclick = function(){
         taskList.style.display = "none";
