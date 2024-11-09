@@ -262,11 +262,11 @@ li {
     background-color: var(--corimpacto);
     transition: 0.4s;
     cursor: pointer;
-    transition: 1s;
 }
 
 #botaoadd:hover {
     background-color: var(--corimpactohover);
+    border-radius:100%;
     transition: 0.4s;
 }
 
