@@ -257,7 +257,7 @@ li {
 .checkbox {
     height: 30px;
     width: 30px;
-    border: solid var(--cortextoII) 4px;
+    border: solid #868689 3px;
     background: none;
     color: #4add4a;
     font-size: 18px;
