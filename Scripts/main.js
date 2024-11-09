@@ -54,6 +54,7 @@ function addNewLine() {
             descText.placeholder = "adicionar descrição...";
             descText.id = "descInput";
             descText.classList.add("descInput");
+            descText.maxLength = "27";
             taskList.appendChild(descText);
 
             var descDel = document.createElement("button");
@@ -68,6 +69,7 @@ function addNewLine() {
                 addDesc.style.display = "none";
                 
             }
+            
             taskList.appendChild(descDel);
 
             var addDesc = document.createElement("button");
@@ -178,7 +180,6 @@ function addNewLine() {
 
         }
     }
-
 
 
     taskList.appendChild(signal);
