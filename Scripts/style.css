@@ -185,8 +185,8 @@ li {
     flex-grow: 1;
     transition: 1s;
 }
-/* não pretende ser provisório. input das descrições */
-/* As cores que eu usei são provisórias, já que eu não sei o que vocês querem no CSS */
+
+/*---descrição---*/
 #descInput{
     border-radius: 15px;
     padding-left: 20px;
@@ -200,23 +200,16 @@ li {
     transition: 1s;
 }
 
-/* não pretende ser provisório. botão das descrições */
-/* As cores que eu usei são provisórias, já que eu não sei o que vocês querem no CSS */
 #addDesc{
-    border-radius: 15px;
-    text-align: center;
-    height: 30px;
-    width: 30px;
-    font-size: 24px;
+    font-size: 25px;
     margin: 5px;
-    transition: 0.5s;
-    background-color: var(--corimpactohover);
-    color: black;
+    background: none;
+    color:#868689;
     transition: 1s;
 }
 
 #addDesc:hover{
-    color: rgb(255, 224, 122);
+    color:var(--cortextoII)
 }
 
 #addDesc:active{
@@ -240,7 +233,8 @@ li {
     background-color: var(--corimpactohover);
     transition: 0.4s;
 }
-/* Eu criei um signal que diz se a tarefa é importante ou normal, ficou legalzinho */
+
+/*----sinal----*/
 #signal{
     margin: 5px;
     right: 0;
@@ -260,29 +254,22 @@ li {
     border: solid #868689 3px;
     background: none;
     color: #4add4a;
-    font-size: 18px;
     margin: 5px;
     border-radius: 100px;
     transition: 1s;
 }
 
+/*lixeira*/
 .trashCan {
-    border-radius: 2px;
-    text-align: center;
-    height: 30px;
-    width: 30px;
-    font-size: 18px;
+    font-size: 250px;
     margin: 5px;
+    background: none;
+    color:#868689;
     transition: 0.5s;
-    background-color: aliceblue;
-    color: red;
-    transition: 1s;
 }
 
 .trashCan:hover {
-    background-color: red;
-    color: white;
-    
+    color:var(--importante);
     transition: 1s;
 }
 
