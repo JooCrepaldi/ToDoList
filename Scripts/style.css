@@ -188,6 +188,7 @@ li {
     height: 56px;
     background-color: var(--corimpacto);
     transition: 0.4s;
+    cursor: pointer;
 }
 
 #botaoadd:hover {
