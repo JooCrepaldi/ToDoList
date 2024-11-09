@@ -114,16 +114,12 @@ function addNewLine() {
                  
         }
     }
-            
+     
+    //---seu código original---
+    //delButton.classList.add("trashCan"); delButton.textContent = "🗑"; delButton.onclick = function(){ taskList.style.display = "none"; counterState(document.getElementById("totalApagado"), 1); }
 
-    
-    delButton.classList.add("trashCan");
-    delButton.textContent = "🗑";
-    delButton.onclick = function(){
-        taskList.style.display = "none";
-        counterState(document.getElementById("totalApagado"), 1);
-    }
-
+//fabras eu tive que fazer isso para ver se ia o ícone... mas agora tá funcionando!!    
+    var delButton = document.createElement("button"); delButton.classList.add("trashCan", "material-icons"); delButton.textContent = "delete";
     checkbox.classList.add("checkbox");
     checkbox.onclick = function(){
        

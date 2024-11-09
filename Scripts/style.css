@@ -138,27 +138,28 @@ h1 {
 }
 
 #listaprincipal {
-    /*não consigo colocar espaçamento entre as tarefas!!*/
     background-color: var(--corsecundaria);
     border-radius: 25px;
     padding: 10px;
     transition: 1s;
 }
 
-ul {
-    background-color: var(--corprincipal);
-    border-radius: 15px;
-    transition: 1s;
-    /*flex*/
+
+ul{
+    /*flex --------- CONSERTAR a largura*/
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
-
 li {
-    list-style: none;
+    background-color: var(--corprincipal);
     color: var(--cortexto);
-    transition: 1s;
+    list-style: none;
+    border-radius: 15px;
+    /*flex*/
+    display: flex;
+    align-items: center;
 }
 
 /*------baixo------*/
