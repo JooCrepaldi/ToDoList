@@ -73,6 +73,22 @@ body {
     width: 30%;
 }
 
+#Tarefas #tarefasFeitas {
+    display: none;
+}
+
+#Tarefas:hover #tarefasFeitas{
+    display: flex;
+}
+
+#Tarefas .material-symbols-outlined{
+    transition: 1s;
+}
+
+#Tarefas:hover .material-symbols-outlined{
+    rotate: 180deg;
+    transition: 1s;
+}
 
 /*--------------------------LISTA--------------------------------*/
 #fundolista {
