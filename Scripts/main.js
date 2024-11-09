@@ -198,6 +198,9 @@ function switchScreen() {
         // Mudando a cor para a de tarefas importantes
         (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--importante');
         (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--importante');
+        
+        // Mudando ícone
+        (document.getElementById("switchScreenButton")).textContent = "window";
         (document.getElementById("textTarefas")).textContent = "Importantes";
         (document.getElementById("importantTaskList")).style.display = "flex";
         (document.getElementById("taskList")).style.display = "none";
@@ -206,6 +209,9 @@ function switchScreen() {
     else {
         (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--tarefas');
         (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--tarefas');
+
+        (document.getElementById("switchScreenButton")).textContent = "bolt";
+
         (document.getElementById("textTarefas")).textContent = "Tarefas";
         (document.getElementById("importantTaskList")).style.display = "none";
         (document.getElementById("taskList")).style.display = "flex";
@@ -228,6 +234,7 @@ function showDoneTasks() {
     if ((document.getElementById("doneTasks")).style.display != "flex"){
 
         (document.getElementById("showDoneButton")).textContent = "view_list";
+
         (document.getElementById("textTarefas")).textContent = "Concluídas";
         (document.getElementById("doneTasks")).style.display = "flex";
         (document.getElementById("input")).style.display = "none";
