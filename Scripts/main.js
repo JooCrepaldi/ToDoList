@@ -4,12 +4,9 @@ var evenOrOdd2 = 0;
 
 
 
-
-
 // Aprendi fazendo. Essa seção está pegando o 'root:' do CSS e o tornando variável do JavaScript
 // Esta variável está mudando o valor de acordo com o código sendo rodado.
 const rootStyles = getComputedStyle(document.documentElement);
-
 
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
@@ -23,14 +20,13 @@ function toggleDarkMode() {
     }
 }
 
-
 /*Função que irá adicionar uma nova linha conforme  o usuário digitar algo no campo de texto*/
 
 function addNewLine() {
     // Variável inputValue captura o texto do input quando o botão "+" é pressionado
     var inputValue = document.getElementById("input").value;
-    //Variável taskList é para ir adicionando as tarefas na lista conforme o usuário digita algo no campo de texto
-
+    
+    // taskList criado no início da função, pois essa variável precisa estar no escopo de todas as funções abaixo.
     var taskList;
 
     var isDescOn = 0;
@@ -43,8 +39,6 @@ function addNewLine() {
 
     // Botão que adiciona descrições às tarefas
     var descBar = document.createElement("button");
-
-
 
     // Texto da descrição
     var descList = document.createElement("p");
@@ -67,7 +61,6 @@ function addNewLine() {
     descBar.id = "addDesc";
     descBar.textContent = "add_notes";
     descBar.onclick = function (){
-        
     
         if(descBar.textContent == "add_notes" && (document.getElementById("input")).style.display != "none"){
             taskList.appendChild(document.createElement("p"));
@@ -85,7 +78,6 @@ function addNewLine() {
             descText.classList.add("descInput");
             descText.maxLength = "27";
             taskList.appendChild(descText);
-
 
             descDel.classList.add("trashCan");
             descDel.textContent = "X";
@@ -113,7 +105,6 @@ function addNewLine() {
             }
             
             taskList.appendChild(descDel);
-
             
             addDesc.classList.add("checkbox");
             addDesc.textContent = "+";
@@ -145,7 +136,7 @@ function addNewLine() {
             
             descBar.textContent = "visibility";
             descList.style.display = "none";
-            whatAmIDeleting = 0;
+            whatAmIDeleting = 1;
 
         }
         else if(descBar.textContent == "visibility"){
@@ -184,38 +175,57 @@ function addNewLine() {
         }
 
         else {
-            checkbox.textContent = "✔";
 
+            // Muito esquisita essa parte.
+            // Existe um erro que impede que todos os passos nesta seção sejam realizados corretamente.
+            // Caso a linha
+            /* 
             if(whatAmIDeleting == 0){
-                alert("ops");
                 descDel.style.display = "none";
             }
+            */
+            // não esteja no final, sendo a última instrução a ser feita, todo o resto é ignorado, até que
+            // a condição seja verdadeira, mesmo que o resto não seja o seu lado falso (else{})
+            // Mas mesmo assim, ao colocá-la no final, tudo funciona corretamente. Creio que esse seja um
+            // erro de escopo e de alcance da variável pelas funções, e que também ao apagar o descDel
+            // inicialmente, interrompe as referências às demais variáveis no bloco.
 
+            checkbox.textContent = "✔";
+
+  
             descText.value = '';
             descText.style.display = "none";
 
             addDesc.style.display = "none";
 
+           
+            
             counterState(document.getElementById("totalConcluido"), 1);
-
             (document.getElementById("doneTasks")).appendChild(taskList);
+            
+            if(whatAmIDeleting == 0){
+                descDel.style.display = "none";
+            }
         }
     }
-
     
-    //se o valor do input for diferente de um espaço em branco, vai adicionar uma linha, com uma checkbox  e o texto do input
+        // Só executa a parte a frente caso o input tenha caracteres diferentes de espaços em branco
+    // Observação: Não sei direito o que a função trim() faz, mas ela está impedindo que somente espaços
+    // em branco sejam registrados (uma string " " é diferente de uma string "  ", mas ambas estão sendo invalidadas)
     if (inputValue.trim() != '') {
 
+        // taskList agora recebe o seu valor de variável, que é um elemento de lista (li)
         taskList = document.createElement("li");
         taskList.appendChild(checkbox);
         taskList.appendChild(document.createTextNode(inputValue));
         taskList.appendChild(descBar);
         taskList.appendChild(delButton);
+
+        // Variável signal é um símbolo que diferencia tarefas importantes e normais
         var signal = document.createElement("span");
         signal.id = "signal";
         signal.classList.add("material-icons");
         signal.textContent = "radio_button_checked";
-        
 
         if (whichScreen == 0) {
             evenOrOdd++;
@@ -238,7 +248,6 @@ function addNewLine() {
 
         }
     }
-
 
     taskList.appendChild(signal);
     
@@ -290,7 +299,6 @@ function switchScreen() {
 
 function showDoneTasks() {
 
-
     (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--concluido');
     (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--concluido');
 
@@ -340,10 +348,13 @@ function showDoneTasks() {
 function counterState(pointedElement, number) {
     if (number != 0) {
         if ((parseInt(pointedElement.innerText) + number) >= 0) {
+            // Atualiza o número na sidebar
             pointedElement.innerText = parseInt(pointedElement.innerText) + number;
         }
     }
     else {
+
+        // Zera os dados da sidebar
         document.getElementById("totalCriado").innerText = 0;
         document.getElementById("totalApagado").innerText = 0;
         document.getElementById("totalConcluido").innerText = 0;
