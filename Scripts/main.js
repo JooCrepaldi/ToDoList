@@ -3,7 +3,6 @@ var evenOrOdd = 0;
 var evenOrOdd2 = 0;
 
 
-
 // Aprendi fazendo. Essa seção está pegando o 'root:' do CSS e o tornando variável do JavaScript
 // Esta variável está mudando o valor de acordo com o código sendo rodado.
 const rootStyles = getComputedStyle(document.documentElement);
@@ -215,6 +214,7 @@ function addNewLine() {
     if (inputValue.trim() != '') {
 
         // taskList agora recebe o seu valor de variável, que é um elemento de lista (li)
+
         taskList = document.createElement("li");
         taskList.appendChild(checkbox);
         taskList.appendChild(document.createTextNode(inputValue));
