@@ -306,7 +306,7 @@ function showDoneTasks() {
     (document.getElementById("taskList")).style.display = "none";
     (document.getElementById("importantTaskList")).style.display = "none";
 
-    if ((document.getElementById("doneTasks")).style.display != "flex"){
+    if((document.getElementById("doneTasks")).style.display != "flex"){
 
         (document.getElementById("showDoneButton")).textContent = "view_list";
 
@@ -337,12 +337,7 @@ function showDoneTasks() {
         }
     }
 
-    if(descList.style.display == "none"){
-        descDel.style.display = "none";
-    }
 
-    descText.style.display = "none";
-    addDesc.style.display = "none";
 }
 
 function counterState(pointedElement, number) {
