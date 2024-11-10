@@ -5,6 +5,7 @@ var evenOrOdd2 = 0;
 
 
 
+
 // Aprendi fazendo. Essa seção está pegando o 'root:' do CSS e o tornando variável do JavaScript
 // Esta variável está mudando o valor de acordo com o código sendo rodado.
 const rootStyles = getComputedStyle(document.documentElement);
@@ -32,47 +33,88 @@ function addNewLine() {
 
     var taskList;
 
+    var isDescOn = 0;
 
     //checkbox funcionando como  um botão para adicionar a tarefa na lista de tarefas concluídas
     var checkbox = document.createElement("button");
+
     // Botão que exclui a tarefa referente
     var delButton = document.createElement("button");
+
     // Botão que adiciona descrições às tarefas
     var descBar = document.createElement("button");
+
+
+
     // Texto da descrição
-    var descList = document.createElement("text");
+    var descList = document.createElement("p");
+
+    // Botão que adiciona a descrição
+    var addDesc = document.createElement("button");
+
+    // Botão que apaga a descrição referente
+    var descDel = document.createElement("button");
+
+    // Input da descrição
+    var descText = document.createElement("input");
+
+    // As quatro variáveis acima são declaradas acima, por mais que sejam "feitas" mais abaixo no código,
+    // pois para outras funções (sobreposição da checkbox, e outros botões dentro do 'addNewLine()') os
+    // objetos necessitavam estar dentro do escopo.
+    // Mais adiante eu explico com mais detalhes.
 
     descBar.classList.add("addDesc", "material-symbols-outlined");
     descBar.id = "addDesc";
     descBar.textContent = "add_notes";
     descBar.onclick = function (){
+        
     
         if(descBar.textContent == "add_notes" && (document.getElementById("input")).style.display != "none"){
-            descBar.textContent = " add_notes ";
             taskList.appendChild(document.createElement("p"));
-            var descText = document.createElement("input");
+
+            // Dependendo do loop do código, os itens abaixo continuam não visíveis, então caso sejam de fato
+            // definidos, eles reaparecem.
+            descDel.style.display = "block";
+            descText.style.display = "block";
+            descList.style.display = "none";
+            addDesc.style.display = "block";
+            whatAmIDeleting = 0;
+
             descText.placeholder = "adicionar descrição...";
             descText.id = "descInput";
             descText.classList.add("descInput");
             descText.maxLength = "27";
             taskList.appendChild(descText);
 
-            var descDel = document.createElement("button");
+
             descDel.classList.add("trashCan");
             descDel.textContent = "X";
             descDel.onclick = function(){
-                descDel.style.display = "none";
+        
+                // Apagam os itens adicionados no taskList, criados dentro da função descBar.onclick()
+
                 descBar.textContent = "add_notes";
-                descList.value = '';
-                descText.style.display = "none";
+                descText.value = '';
+                isDescOn = 0;
+                descList.textContent = '';
                 descList.style.display = "none";
+
+
+                descText.style.display = "none";
+                descDel.style.display = "none";
+
                 addDesc.style.display = "none";
+
+                // Oposto do appendChild(). Usado para remover o item descList, para evitar que o mesmo
+                // item fosse adicionado novamente, então ele é apagado por completo, evitando que erros
+                // de referência às variáveis e outros semelhantes ocorram.
+                taskList.removeChild(descList);
                 
             }
             
             taskList.appendChild(descDel);
 
-            var addDesc = document.createElement("button");
+            
             addDesc.classList.add("checkbox");
             addDesc.textContent = "+";
 
@@ -81,44 +123,48 @@ function addNewLine() {
 
             addDesc.onclick = function(){
                 if((descText.value).trim() != ''){
-                    
+
+                    // Adiciona os itens criados a taskList, sem muito segredo.
+                    // Também limpa o campo de texto e apaga as outra variáveis, exceto pela descDel.
+
                     descList.classList.add("descLi");
                     descList.textContent = "Descrição: " + descText.value;
                     descList.style.display = "block";
                     taskList.appendChild(descList);
-                    taskList.appendChild(document.createElement('br'));
+
     
-                    descList.value = '';
+                    descText.value = '';
                     descText.style.display = "none";
                     addDesc.style.display = "none";
                     descBar.textContent = "visibility_off";
+                    whatAmIDeleting = 1;
                 }
             }
         }
         else if(descBar.textContent == "visibility_off"){
-
+            
             descBar.textContent = "visibility";
             descList.style.display = "none";
-                        
+            whatAmIDeleting = 0;
+
         }
         else if(descBar.textContent == "visibility"){
             
-                descBar.textContent = "visibility_off";
-                descList.style.display = "block";
+            descBar.textContent = "visibility_off";
+            descList.style.display = "block";
+            whatAmIDeleting = 1;
                  
         }
     }
      
-    //---seu código original---
-    //delButton.classList.add("trashCan"); delButton.textContent = "🗑"; delButton.onclick = function(){ taskList.style.display = "none"; counterState(document.getElementById("totalApagado"), 1); }
-
-//fabras eu tive que fazer isso para ver se ia o ícone... mas agora tá funcionando!! 
-// crepas, dessa vez ficou realmente muito bom, meu parabas!   
+    // Lixeira linda
     var delButton = document.createElement("button"); 
     delButton.classList.add("trashCan", "material-symbols-outlined");
     delButton.textContent = "delete";
     delButton.onclick = function(){
         taskList.style.display = "none";
+        isDescOn = 0;
+        doesDescListExist = 0;
         counterState(document.getElementById("totalApagado"), 1);
     }
     checkbox.classList.add("checkbox");
@@ -139,7 +185,19 @@ function addNewLine() {
 
         else {
             checkbox.textContent = "✔";
+
+            if(whatAmIDeleting == 0){
+                alert("ops");
+                descDel.style.display = "none";
+            }
+
+            descText.value = '';
+            descText.style.display = "none";
+
+            addDesc.style.display = "none";
+
             counterState(document.getElementById("totalConcluido"), 1);
+
             (document.getElementById("doneTasks")).appendChild(taskList);
         }
     }
@@ -193,6 +251,8 @@ function switchScreen() {
     document.getElementById("input").value = '';
     (document.getElementById("input")).style.display = "block";
     (document.getElementById("botaoadd")).style.display = "block";
+
+
     if (whichScreen == 0) {
 
         // Mudando a cor para a de tarefas importantes
@@ -219,6 +279,13 @@ function switchScreen() {
     }
     (document.getElementById("showDoneButton")).textContent = "check_circle";
     (document.getElementById("doneTasks")).style.display = "none";
+
+    if(descList.style.display == "none"){
+        descDel.style.display = "none";
+    }
+
+    descText.style.display = "none";
+    addDesc.style.display = "none";
 }
 
 function showDoneTasks() {
@@ -261,6 +328,13 @@ function showDoneTasks() {
             (document.getElementById("taskList")).style.display = "flex";
         }
     }
+
+    if(descList.style.display == "none"){
+        descDel.style.display = "none";
+    }
+
+    descText.style.display = "none";
+    addDesc.style.display = "none";
 }
 
 function counterState(pointedElement, number) {
