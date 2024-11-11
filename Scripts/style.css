@@ -17,6 +17,7 @@
     --concluido: rgba(55, 160, 145, 1);
     --importante: rgba(165, 60, 80, 1);
     --tarefas: rgba(80, 115, 180, 1);
+    --corinputURL: rgba(240, 240, 235, 1);;
 }
 
 
@@ -32,13 +33,14 @@
     /* status (tons ajustados para maior contraste) */
     --concluido: rgb(77, 199, 181);        
     --importante: rgb(216, 99, 117);      
-    --tarefas: rgba(80, 115, 180, 1);  
+    --tarefas: rgba(80, 115, 180, 1);
+    --corinputURL: rgb(97, 97, 97);
 }
 
 
 body {
     background: var(--corfundo);
-    transition: 0.7s;
+    transition: 1s;
     /*flex*/
     display: flex;
     justify-content: center;
@@ -46,6 +48,10 @@ body {
     flex-direction: row;
     min-height: 100vh;
     font-family: 'Space Grotesk';
+}
+
+button{
+    cursor: pointer;
 }
 
 /*-------------------------------SIDEBAR------------------------------*/
@@ -109,6 +115,131 @@ body {
 /*--icone--*/
 #seta{
     color: var(--cortextoII);
+}
+
+/*----------------------SIDEBAR DIREITA--------------------------*/
+#Tarefas2 {
+    font-size: 0px;
+    width: 60px;
+    height: 100px;
+    right: 1%;
+    position: fixed;
+    z-index: 1;
+    /*flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--corsecundaria);
+    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25); ;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+#Tarefas2:hover {
+    transition: 1s;
+    font-size: 20px;
+    height: 40%;
+    color: var(--cortexto);
+    width: 25%;
+}
+
+#Tarefas2 .material-symbols-outlined{
+    rotate: 180deg;
+    transition: 1s;
+}
+
+#Tarefas2:hover .material-symbols-outlined{
+    rotate: 360deg;
+    transition: 1s;
+}
+
+#Tarefas2 #linkImagem{
+    display: none;
+    width: 0px;
+    transition: 1s;
+}
+
+#Tarefas2:hover #linkImagem{
+    display: flex;
+    transition: 1s;
+    width: 100%;
+}
+
+#linkImagem {
+    border-radius: 15px;
+    padding-left: 20px;
+    width: 400px;
+    height: 56px;
+    background-color: var(--corinputURL);
+    color: var(--cortexto);
+    /*flex*/
+    flex-grow: 1;
+    transition: 1s;
+}
+
+#Tarefas2 #botaoURL {
+    display: none;
+    font-size: 20px;
+    border-radius: 15px;
+    width: 56px;
+    height: 56px;
+    background-color: var(--corimpacto);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#botaoURL:hover {
+    background-color: var(--corimpactohover);
+    border-radius:100%;
+    transition: 0.5s;
+}
+
+#Tarefas2:hover #botaoURL {
+    display: block;
+    font-size: 20px;
+    border-radius: 15px;
+    width: 56px;
+    height: 56px;
+    background-color: var(--corimpacto);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#Tarefas2 #delImg {
+    display: none;
+    font-size: 20px;
+    border-radius: 15px;
+    width: auto;
+    height: auto;
+    background-color: var(--corimpacto);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#delImg:hover {
+    background-color: var(--corimpactohover);
+    border-radius:100%;
+    transition: 0.5s;
+}
+
+#Tarefas2:hover #delImg {
+    display: block;
+    font-size: 20px;
+    border-radius: 15px;
+    width: auto;
+    height: auto;
+    background-color: var(--corimpacto);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#localDel {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
 }
 
 /*--------------------------LISTA--------------------------------*/
@@ -353,3 +484,77 @@ li {
     background-color: var(--corprincipal);
     transition: 0.4s;
 }   
+
+/*-----------------Descrições dos botões-----------------*/
+.descricao {
+    position: relative;
+    display: inline-block;
+}
+
+.descricao .descricao-cima-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    right: -130%;
+    top: 20%;
+    transform: translateY(-135%); 
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.descricao .descricao-cima-text::after {
+    content: '';
+    position: absolute;
+    left: 48%;
+    top: 113%;
+    margin-top: -5px;
+    border-width: 5px;
+    rotate: 90deg;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+
+.descricao:hover .descricao-cima-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.descricao .descricao-direita-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    left: 110%;
+    top: 70%;
+    transform: translateY(-60%); 
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.descricao .descricao-direita-text::after {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-top: -5px;
+    border-width: 5px;
+    rotate: 180deg;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+
+.descricao:hover .descricao-direita-text {
+    visibility: visible;
+    opacity: 1;
+}
