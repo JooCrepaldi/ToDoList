@@ -2,7 +2,6 @@ var whichScreen = 0;
 var evenOrOdd = 0;
 var evenOrOdd2 = 0;
 
-
 // Aprendi fazendo. Essa seção está pegando o 'root:' do CSS e o tornando variável do JavaScript
 // Esta variável está mudando o valor de acordo com o código sendo rodado.
 const rootStyles = getComputedStyle(document.documentElement);
