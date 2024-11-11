@@ -11,10 +11,12 @@ function toggleDarkMode() {
     if((document.getElementById("theme-icon")).textContent != "light_mode"){
         (document.getElementById("theme-icon")).style.color = "var(--cortextoI)";
         (document.getElementById("theme-icon")).textContent = "light_mode";
+        document.getElementById("descEscuro").innerText = "Modo Claro";
     }
     else{
         (document.getElementById("theme-icon")).textContent = "dark_mode";
         (document.getElementById("theme-icon")).style.color = "var(--cortextoII)";
+        document.getElementById("descEscuro").innerText = "Modo Escuro";
     }
 }
 
@@ -353,4 +355,24 @@ function counterState(pointedElement, number) {
         document.getElementById("totalApagado").innerText = 0;
         document.getElementById("totalConcluido").innerText = 0;
     }
+}
+
+//-------------------------TROCA DE IMAGEM---------------------------------------
+
+function trocarImagmfundo() {
+    const urlInput = document.getElementById('linkImagem');
+    const url = urlInput.value;
+
+    if (url) {
+        document.body.style.backgroundImage = `url(${url})`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+    } else {
+        alert("Por favor, insira uma URL válida.");
+    }
+}
+
+function removerImagmfundo () {
+    document.body.style.backgroundImage = "none";
+    document.body.style.background = "var(--corfundo)";
 }
