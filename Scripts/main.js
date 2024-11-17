@@ -227,12 +227,10 @@ function addNewLine() {
         signal.textContent = "radio_button_checked";
 
         if (whichScreen == 0) {
-            evenOrOdd++;
-            if (evenOrOdd % 2 == 0) {
-                // Tarefas pares e ímpares inativadas por agora
-            }
+            
+            checkbox.style.color = "var(--tarefas)";
             (document.getElementById("taskList")).appendChild(taskList);
-            signal.style.color = "var(--tarefas)";
+            // signal.style.color = "var(--tarefas)";
 
         }
         else {
@@ -242,13 +240,14 @@ function addNewLine() {
                 
             }
             
+            checkbox.style.color = "var(--importante)";
             (document.getElementById("importantTaskList")).appendChild(taskList);
-            signal.style.color = "var(--importante)";
+            // signal.style.color = "var(--importante)";
 
         }
     }
 
-    taskList.appendChild(signal);
+    // taskList.appendChild(signal);
     
     counterState(document.getElementById("totalCriado"), 1);
     document.getElementById("input").value = '';
