@@ -150,6 +150,7 @@ button {
 #Tarefas2 .material-symbols-outlined {
     rotate: 180deg;
     transition: 1s;
+    align-items: center;
 }
 
 #Tarefas2:hover .material-symbols-outlined {
@@ -229,7 +230,6 @@ button {
 
 #Tarefas2:hover #delImg {
     display: block;
-    font-size: 20px;
     border-radius: 15px;
     width: auto;
     height: auto;
@@ -238,7 +238,7 @@ button {
     cursor: pointer;
 }
 
-#baixo {
+#Tarefas2 #baixo {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -426,9 +426,10 @@ li {
     height: 30px;
     width: 30px;
     border: solid #868689 3px;
+    margin-right: 3px;
+    color:var(--concluido);
     font-size: large;
     background: none;
-    color: #4add4a;
     margin: 5px;
     border-radius: 100px;
     transition: 0.7s;
@@ -506,7 +507,7 @@ li {
     background-color: rgba(0, 0, 0, 0.647);
     color: #fff;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 5px;
     position: absolute;
     z-index: 1;
@@ -537,10 +538,10 @@ li {
 .descricao .descricao-direita-text {
     visibility: hidden;
     width: 120px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.647);
     color: #fff;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 5px;
     position: absolute;
     z-index: 1;
