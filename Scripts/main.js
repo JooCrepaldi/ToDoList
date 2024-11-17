@@ -267,8 +267,9 @@ function switchScreen() {
         // Mudando a cor para a de tarefas importantes
         (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--importante');
         (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--importante');
-        
+        (document.getElementById("intNorm")).textContent = "Tarefas Normais";
         // Mudando ícone
+        
         (document.getElementById("switchScreenButton")).textContent = "window";
         (document.getElementById("textTarefas")).textContent = "Importantes";
         (document.getElementById("importantTaskList")).style.display = "flex";
@@ -276,6 +277,8 @@ function switchScreen() {
         whichScreen = 1;
     }
     else {
+
+        (document.getElementById("intNorm")).textContent = "Tarefas Importantes";
         (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--tarefas');
         (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--tarefas');
 
@@ -286,6 +289,7 @@ function switchScreen() {
         (document.getElementById("taskList")).style.display = "flex";
         whichScreen = 0;
     }
+    (document.getElementById("intConc")).textContent = "Tarefas Concluídas";
     (document.getElementById("showDoneButton")).textContent = "check_circle";
     (document.getElementById("doneTasks")).style.display = "none";
 
@@ -302,14 +306,19 @@ function showDoneTasks() {
     (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--concluido');
     (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--concluido');
 
-
+    
     (document.getElementById("taskList")).style.display = "none";
     (document.getElementById("importantTaskList")).style.display = "none";
 
     if((document.getElementById("doneTasks")).style.display != "flex"){
 
         (document.getElementById("showDoneButton")).textContent = "view_list";
-
+        if(whichScreen == 1){
+            (document.getElementById("intConc")).textContent = "Tarefas Importantes";
+        }
+        else{
+            (document.getElementById("intConc")).textContent = "Tarefas Normais";
+        }
         (document.getElementById("textTarefas")).textContent = "Concluídas";
         (document.getElementById("doneTasks")).style.display = "flex";
         (document.getElementById("input")).style.display = "none";
@@ -326,6 +335,8 @@ function showDoneTasks() {
             (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--importante');
             (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--importante');
             (document.getElementById("textTarefas")).textContent = "Importantes";
+            (document.getElementById("intConc")).textContent = "Tarefas Concluídas";
+            
             (document.getElementById("importantTaskList")).style.display = "flex";
         }
         else {
@@ -333,6 +344,7 @@ function showDoneTasks() {
             (document.getElementById("status")).style.borderColor = rootStyles.getPropertyValue('--tarefas');
             (document.getElementById("status")).style.color = rootStyles.getPropertyValue('--tarefas');
             (document.getElementById("textTarefas")).textContent = "Tarefas";
+            (document.getElementById("intConc")).textContent = "Tarefas Concluídas";
             (document.getElementById("taskList")).style.display = "flex";
         }
     }
@@ -366,6 +378,7 @@ function trocarImagmfundo() {
         document.body.style.backgroundImage = `url(${url})`;
         document.body.style.backgroundSize = 'cover';
         document.body.style.backgroundPosition = 'center';
+        urlInput.value = '';
     } else {
         alert("Por favor, insira uma URL válida.");
     }
@@ -374,4 +387,7 @@ function trocarImagmfundo() {
 function removerImagmfundo () {
     document.body.style.backgroundImage = "none";
     document.body.style.background = "var(--corfundo)";
+    urlInput.value = '';
 }
+
+// Fabricio aqui. "urlInput.value = '';" limpa o campo de texto após inserir ou apagar a imagem de fundos 
