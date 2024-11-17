@@ -414,7 +414,7 @@ li {
     right: 0%;
     position: absolute;
     transition: 0.7s;
-}
+} */
 
 ::placeholder {
     color: var(--cortexto);
@@ -426,6 +426,7 @@ li {
     height: 30px;
     width: 30px;
     border: solid #868689 3px;
+    font-size: large;
     background: none;
     color: #4add4a;
     margin: 5px;
