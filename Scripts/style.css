@@ -375,6 +375,11 @@ li {
     transition: 0.7s;
 }
 
+#descInput::placeholder{
+    font-size: 15px;
+}
+
+
 #addDesc {
     font-size: 25px;
     margin: 5px;

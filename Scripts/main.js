@@ -118,9 +118,11 @@ function addNewLine() {
                     // Adiciona os itens criados a taskList, sem muito segredo.
                     // Também limpa o campo de texto e apaga as outra variáveis, exceto pela descDel.
 
-                    descList.classList.add("descLi");
-                    descList.textContent = "Descrição: " + descText.value;
+                    // descList.classList.add("descLi");
+                    descList.textContent = descText.value;
                     descList.style.display = "block";
+                    descList.style.fontFamily = "Host Grotesk";
+                    descList.style.fontStyle = "italic";
                     taskList.appendChild(descList);
 
     

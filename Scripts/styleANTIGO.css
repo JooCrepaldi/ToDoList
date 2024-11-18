@@ -75,6 +75,7 @@ h1 {
     color: var(--cortexto);
     flex-grow: 1;/*manda o ícone da lua pro outro lado*/
     transition: 1s;
+    
 }
 
 ::placeholder {
