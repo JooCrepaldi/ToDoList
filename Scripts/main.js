@@ -63,7 +63,8 @@ function addNewLine() {
     descBar.onclick = function (){
     
         if(descBar.textContent == "add_notes" && (document.getElementById("input")).style.display != "none"){
-            taskList.appendChild(document.createElement("p"));
+            var descHost = document.createElement('li');
+            descHost.id = "descHost";
 
             // Dependendo do loop do código, os itens abaixo continuam não visíveis, então caso sejam de fato
             // definidos, eles reaparecem.
@@ -76,10 +77,12 @@ function addNewLine() {
             descText.placeholder = "adicionar descrição...";
             descText.id = "descInput";
             descText.classList.add("descInput");
-            descText.maxLength = "27";
+            descText.maxLength = "70";
             taskList.appendChild(descText);
 
             descDel.classList.add("trashCan");
+            descDel.style.display = "flex";
+            descDel.style.alignSelf = "center";
             descDel.textContent = "X";
             descDel.onclick = function(){
         
@@ -90,7 +93,7 @@ function addNewLine() {
                 isDescOn = 0;
                 descList.textContent = '';
                 descList.style.display = "none";
-
+                taskList.style.display = "flex";
 
                 descText.style.display = "none";
                 descDel.style.display = "none";
@@ -121,10 +124,13 @@ function addNewLine() {
                     // descList.classList.add("descLi");
                     descList.textContent = descText.value;
                     descList.id = "descList";
-                    taskList.appendChild(descList);
-                    taskList.appendChild(descDel);
+                    descList.appendChild(descDel);
+                    descHost.appendChild(descList);
+                    taskList.appendChild(descHost);
+
+                    taskList.style.display = "block";
+
                     descList.style.display = "block";
-    
                     descText.value = '';
                     descText.style.display = "none";
                     addDesc.style.display = "none";
@@ -137,6 +143,7 @@ function addNewLine() {
             
             descBar.textContent = "visibility";
             descList.style.display = "none";
+            taskList.style.display = "flex";
             whatAmIDeleting = 1;
 
         }
@@ -144,6 +151,7 @@ function addNewLine() {
             
             descBar.textContent = "visibility_off";
             descList.style.display = "block";
+            taskList.style.display = "block";
             whatAmIDeleting = 1;
                  
         }
@@ -170,10 +178,12 @@ function addNewLine() {
             //  Se a tarefa referente tiver a classe importantTask ela é adicionada na seção de tarefas importantes
             if (taskList.classList.contains("importantTask")) {
                 (document.getElementById("importantTaskList")).appendChild(taskList);
+                (document.getElementById("importantTaskList")).appendChild(taskDescription);
             }
             // Caso contrário é adicionada na seção de tarefas normais
             else {
                 (document.getElementById("taskList")).appendChild(taskList);
+                (document.getElementById("taskList")).appendChild(taskDescription);
             }
         }
 
@@ -224,10 +234,9 @@ function addNewLine() {
         taskList.appendChild(document.createTextNode(inputValue));
         taskList.appendChild(descBar);
         taskList.appendChild(delButton);
+
+
         
-
-
-
 
         if (whichScreen == 0) {
             

@@ -335,7 +335,7 @@ li {
     white-space: break-word;
     position: relative;
     transition: 0.7s;
-    /*flex*/
+    /* flex*/
     display: flex;
     align-items: center;
 }
@@ -386,11 +386,22 @@ li {
     font-style: italic;
     color: var(--cortexto);
     display: block;
+    margin: 10px;
 }
 
 #descHost{
-    background-color: var(--tarefas);
+    background-color: var(--corprincipal);
+    color: var(--cortexto);
+    list-style: none;
+    border-radius: 15px;
+    white-space: break-word;
+    position: relative;
+    transition: 0.7s;
+    /* flex*/
+    display: flex;
+    flex-direction: row;
 }
+
 
 #addDesc {
     font-size: 25px;
