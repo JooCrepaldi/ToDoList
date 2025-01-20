@@ -17,22 +17,23 @@
     --concluido: rgba(55, 160, 145, 1);
     --importante: rgba(165, 60, 80, 1);
     --tarefas: rgba(80, 115, 180, 1);
-    --corinputURL: rgba(240, 240, 235, 1);;
+    --corinputURL: rgba(240, 240, 235, 1);
+    ;
 }
 
 
 /*Modo Dark*/
 .dark-mode {
-    --corfundo: linear-gradient(to right bottom, #272929, #151517);          
-    --corprincipal: rgb(40, 40, 45);      
-    --corsecundaria: rgb(55, 55, 60);    
-    --corimpacto:rgb(71, 115, 185);     
-    --corimpactohover:rgb(105, 152, 229); 
-    --cortexto: rgb(235, 235, 235);        
-    --cortextoII: rgb(180, 180, 190);    
+    --corfundo: linear-gradient(to right bottom, #272929, #151517);
+    --corprincipal: rgb(40, 40, 45);
+    --corsecundaria: rgb(55, 55, 60);
+    --corimpacto: rgb(71, 115, 185);
+    --corimpactohover: rgb(105, 152, 229);
+    --cortexto: rgb(235, 235, 235);
+    --cortextoII: rgb(180, 180, 190);
     /* status (tons ajustados para maior contraste) */
-    --concluido: rgb(77, 199, 181);        
-    --importante: rgb(216, 99, 117);      
+    --concluido: rgb(77, 199, 181);
+    --importante: rgb(216, 99, 117);
     --tarefas: rgba(80, 115, 180, 1);
     --corinputURL: rgb(97, 97, 97);
 }
@@ -50,7 +51,7 @@ body {
     font-family: 'Space Grotesk';
 }
 
-button{
+button {
     cursor: pointer;
 }
 
@@ -68,7 +69,8 @@ button{
     justify-content: center;
     align-items: center;
     background-color: var(--corsecundaria);
-    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25); ;
+    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
+    ;
     border-radius: 15px;
     transition: 0.7s;
 }
@@ -85,20 +87,20 @@ button{
     display: none;
 }
 
-#Tarefas:hover #tarefasFeitas{
+#Tarefas:hover #tarefasFeitas {
     display: flex;
 }
 
-#Tarefas .material-symbols-outlined{
+#Tarefas .material-symbols-outlined {
     transition: 0.7s;
 }
 
-#Tarefas:hover .material-symbols-outlined{
+#Tarefas:hover .material-symbols-outlined {
     rotate: 180deg;
     transition: 0.7s;
 }
 
-#tarefasFeitas{
+#tarefasFeitas {
     margin-top: 10px;
     padding: 10px;
     background-color: var(--corimpacto);
@@ -107,13 +109,13 @@ button{
     transition: 0.7s;
 }
 
-#tarefasFeitas:hover{
+#tarefasFeitas:hover {
     background-color: var(--corimpactohover);
     transition: 0.7s;
 }
 
 /*--icone--*/
-#seta{
+#seta {
     color: var(--cortextoII);
 }
 
@@ -131,36 +133,38 @@ button{
     justify-content: center;
     align-items: center;
     background-color: var(--corsecundaria);
-    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25); ;
+    box-shadow: 0px 4px 50px 8px rgba(0, 0, 0, 0.25);
+    ;
     border-radius: 15px;
     transition: 1s;
 }
 
 #Tarefas2:hover {
-    transition: 1s;
+    transition: 0.7s;
     font-size: 20px;
     height: 40%;
     color: var(--cortexto);
     width: 25%;
 }
 
-#Tarefas2 .material-symbols-outlined{
+#Tarefas2 .material-symbols-outlined {
     rotate: 180deg;
     transition: 1s;
+    align-items: center;
 }
 
-#Tarefas2:hover .material-symbols-outlined{
+#Tarefas2:hover .material-symbols-outlined {
     rotate: 360deg;
     transition: 1s;
 }
 
-#Tarefas2 #linkImagem{
+#Tarefas2 #linkImagem {
     display: none;
     width: 0px;
     transition: 1s;
 }
 
-#Tarefas2:hover #linkImagem{
+#Tarefas2:hover #linkImagem {
     display: flex;
     transition: 1s;
     width: 100%;
@@ -170,7 +174,7 @@ button{
     border-radius: 15px;
     padding-left: 20px;
     width: 400px;
-    height: 56px;
+    height: 50px;
     background-color: var(--corinputURL);
     color: var(--cortexto);
     /*flex*/
@@ -182,8 +186,8 @@ button{
     display: none;
     font-size: 20px;
     border-radius: 15px;
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
     background-color: var(--corimpacto);
     transition: 0.5s;
     cursor: pointer;
@@ -191,7 +195,7 @@ button{
 
 #botaoURL:hover {
     background-color: var(--corimpactohover);
-    border-radius:100%;
+    border-radius: 100%;
     transition: 0.5s;
 }
 
@@ -206,10 +210,11 @@ button{
     cursor: pointer;
 }
 
-#Tarefas2 #delImg {
+#delImg {
     display: none;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 15px;
+    padding: 10px;
     width: auto;
     height: auto;
     background-color: var(--corimpacto);
@@ -219,13 +224,12 @@ button{
 
 #delImg:hover {
     background-color: var(--corimpactohover);
-    border-radius:100%;
+    border-radius: 100%;
     transition: 0.5s;
 }
 
 #Tarefas2:hover #delImg {
     display: block;
-    font-size: 20px;
     border-radius: 15px;
     width: auto;
     height: auto;
@@ -234,12 +238,16 @@ button{
     cursor: pointer;
 }
 
-#localDel {
+#Tarefas2 #baixo {
     display: flex;
-    text-align: center;
-    justify-content: center;
     align-items: center;
-    margin-top: 10%;
+    margin-bottom: 10px;
+}
+
+#geral_sidebar2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*--------------------------LISTA--------------------------------*/
@@ -312,7 +320,7 @@ h1 {
 }
 
 
-ul{
+ul {
     /*flex --------- CONSERTAR a largura    */
     display: flex;
     flex-direction: column;
@@ -354,7 +362,7 @@ li {
 }
 
 /*---descrição---*/
-#descInput{
+#descInput {
     border-radius: 15px;
     padding-left: 20px;
     font-size: medium;
@@ -367,23 +375,24 @@ li {
     transition: 0.7s;
 }
 
-#descLi{
-    margin: 5px;
+#descInput::placeholder{
+    font-size: 15px;
 }
 
-#addDesc{
+
+#addDesc {
     font-size: 25px;
     margin: 5px;
     background: none;
-    color:#868689;
+    color: #868689;
     transition: 0.7s;
 }
 
-#addDesc:hover{
-    color:var(--cortextoII)
+#addDesc:hover {
+    color: var(--cortextoII)
 }
 
-#addDesc:active{
+#addDesc:active {
     color: rgb(255, 255, 255);
     transition: 0.1s;
 }
@@ -400,12 +409,12 @@ li {
 
 #botaoadd:hover {
     background-color: var(--corimpactohover);
-    border-radius:100%;
+    border-radius: 100%;
     transition: 0.7s;
 }
 
 /*----sinal----*/
-/* #signal{
+#signal {
     margin: 5px;
     right: 0%;
     position: absolute;
@@ -422,19 +431,20 @@ li {
     height: 30px;
     width: 30px;
     border: solid #868689 3px;
+    margin-right: 3px;
+    color:var(--concluido);
     font-size: large;
     background: none;
-    color: #4add4a;
     margin: 5px;
     border-radius: 100px;
     transition: 0.7s;
 }
 
-.checkbox:hover{
+.checkbox:hover {
     border-color: var(--concluido);
 }
 
-.checkbox:active{
+.checkbox:active {
     border-color: var(--tarefas);
     transition: 0.1s;
 }
@@ -444,12 +454,12 @@ li {
     font-size: 23px;
     margin: 5px;
     background: none;
-    color:#868689;
+    color: #868689;
     transition: 0.7s;
 }
 
 .trashCan:hover {
-    color:var(--importante);
+    color: var(--importante);
     transition: 0.7s;
 }
 
@@ -488,7 +498,7 @@ li {
 #fundobar button:hover {
     background-color: var(--corprincipal);
     transition: 0.4s;
-}   
+}
 
 /*-----------------Descrições dos botões-----------------*/
 .descricao {
@@ -499,16 +509,16 @@ li {
 .descricao .descricao-cima-text {
     visibility: hidden;
     width: 120px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.647);
     color: #fff;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 5px;
     position: absolute;
     z-index: 1;
     right: -130%;
     top: 20%;
-    transform: translateY(-135%); 
+    transform: translateY(-135%);
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -533,16 +543,16 @@ li {
 .descricao .descricao-direita-text {
     visibility: hidden;
     width: 120px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.647);
     color: #fff;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 5px;
     position: absolute;
     z-index: 1;
     left: 110%;
     top: 70%;
-    transform: translateY(-60%); 
+    transform: translateY(-60%);
     opacity: 0;
     transition: opacity 0.3s;
 }
