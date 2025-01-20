@@ -332,7 +332,7 @@ li {
     color: var(--cortexto);
     list-style: none;
     border-radius: 15px;
-    white-space: pre-line;
+    white-space: break-word;
     position: relative;
     transition: 0.7s;
     /*flex*/
@@ -361,6 +361,7 @@ li {
     transition: 0.7s;
 }
 
+
 /*---descrição---*/
 #descInput {
     border-radius: 15px;
@@ -379,6 +380,17 @@ li {
     font-size: 15px;
 }
 
+#descList{
+    white-space: break-word;
+    font-family: "Host Grotesk";
+    font-style: italic;
+    color: var(--cortexto);
+    display: block;
+}
+
+#descHost{
+    background-color: var(--tarefas);
+}
 
 #addDesc {
     font-size: 25px;
@@ -412,14 +424,6 @@ li {
     border-radius: 100%;
     transition: 0.7s;
 }
-
-/*----sinal----*/
-#signal {
-    margin: 5px;
-    right: 0%;
-    position: absolute;
-    transition: 0.7s;
-} */
 
 ::placeholder {
     color: var(--cortexto);

@@ -120,11 +120,10 @@ function addNewLine() {
 
                     // descList.classList.add("descLi");
                     descList.textContent = descText.value;
-                    descList.style.display = "block";
-                    descList.style.fontFamily = "Host Grotesk";
-                    descList.style.fontStyle = "italic";
+                    descList.id = "descList";
                     taskList.appendChild(descList);
-
+                    taskList.appendChild(descDel);
+                    descList.style.display = "block";
     
                     descText.value = '';
                     descText.style.display = "none";
@@ -160,6 +159,8 @@ function addNewLine() {
         doesDescListExist = 0;
         counterState(document.getElementById("totalApagado"), 1);
     }
+    
+
     checkbox.classList.add("checkbox");
     checkbox.onclick = function(){
        
@@ -223,12 +224,10 @@ function addNewLine() {
         taskList.appendChild(document.createTextNode(inputValue));
         taskList.appendChild(descBar);
         taskList.appendChild(delButton);
+        
 
-        // Variável signal é um símbolo que diferencia tarefas importantes e normais
-        var signal = document.createElement("span");
-        signal.id = "signal";
-        signal.classList.add("material-icons");
-        signal.textContent = "radio_button_checked";
+
+
 
         if (whichScreen == 0) {
             
