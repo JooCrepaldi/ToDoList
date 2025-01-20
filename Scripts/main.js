@@ -354,6 +354,7 @@ function showDoneTasks() {
 
 function counterState(pointedElement, number) {
     if (number != 0) {
+        
         if ((parseInt(pointedElement.innerText) + number) >= 0) {
             // Atualiza o número na sidebar
             pointedElement.innerText = parseInt(pointedElement.innerText) + number;
