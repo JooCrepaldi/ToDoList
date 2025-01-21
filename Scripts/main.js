@@ -81,8 +81,6 @@ function addNewLine() {
             taskList.appendChild(descText);
 
             descDel.classList.add("trashCan");
-            descDel.style.display = "flex";
-            descDel.style.alignSelf = "center";
             descDel.textContent = "X";
             descDel.onclick = function(){
         

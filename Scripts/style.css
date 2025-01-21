@@ -387,6 +387,7 @@ li {
     color: var(--cortexto);
     display: block;
     margin: 10px;
+    transition: 0.7s;
 }
 
 #descHost{
